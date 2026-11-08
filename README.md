@@ -19,7 +19,7 @@ Open daarna [http://localhost:43127](http://localhost:43127). De ontwikkelserver
 
 ## Statische hosting
 
-De export heeft standaard geen subpad. `NEXT_PUBLIC_BASE_PATH` is leeg tot de host een echt subpad heeft; die waarde wordt `basePath` en het voorvoegsel van texturen én van de licentielinks. De bestanden zelf blijven in de wortel van `out/`, naast `index.html`. Deze repo heet nog spacexai; neem geen andere repositorynaam aan.
+De export heeft standaard geen subpad. `NEXT_PUBLIC_BASE_PATH` is leeg tot de host een echt subpad heeft; die waarde wordt `basePath` en het voorvoegsel van texturen én van de licentielinks. De bestanden zelf blijven in de wortel van `out/`, naast `index.html`. Deze repo heet kosmotale.
 
 Een GitHub Release van de bron of van `out/` is een later, apart besluit. Deze boom bevat geen workflow die publiceert of deployt.
 
