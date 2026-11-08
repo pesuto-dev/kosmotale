@@ -1,0 +1,4029 @@
+{
+  "source": "ESA (1997), The Hipparcos and Tycho Catalogues, I/239, via CDS/VizieR. Afstand uit parallax: 1000/plx mas in parsec, maal 3,261563777 lichtjaar. Alleen sterren met parallax boven 0,15 milliboogseconde. Voor verre sterren is die afstand grof.",
+  "names": "Eigennamen uit de IAU Catalog of Star Names (WGSN), Creative Commons Naamsvermelding. https://www.iau.org/public/themes/naming_stars/ Poolster, Betelgeuze, Wega en Alpha Centauri zijn Nederlandse of gangbare aliassen op die namen.",
+  "stars": [
+    {
+      "hip": 32349,
+      "name": "Sirius",
+      "aliases": [],
+      "mag": -1.44,
+      "ra": 101.287155,
+      "dec": -16.716116,
+      "ly": 8.601,
+      "spect": "A0m..."
+    },
+    {
+      "hip": 30438,
+      "name": "Canopus",
+      "aliases": [],
+      "mag": -0.62,
+      "ra": 95.987958,
+      "dec": -52.69566,
+      "ly": 312.71,
+      "spect": "F0Ib"
+    },
+    {
+      "hip": 69673,
+      "name": "Arcturus",
+      "aliases": [],
+      "mag": -0.05,
+      "ra": 213.9153,
+      "dec": 19.18241,
+      "ly": 36.709,
+      "spect": "K2IIIp"
+    },
+    {
+      "hip": 71683,
+      "name": "Alpha Centauri",
+      "aliases": [
+        "Rigil Kentaurus"
+      ],
+      "mag": -0.01,
+      "ra": 219.902066,
+      "dec": -60.833975,
+      "ly": 4.395,
+      "spect": "G2V"
+    },
+    {
+      "hip": 91262,
+      "name": "Wega",
+      "aliases": [
+        "Vega"
+      ],
+      "mag": 0.03,
+      "ra": 279.234735,
+      "dec": 38.783692,
+      "ly": 25.297,
+      "spect": "A0Vvar"
+    },
+    {
+      "hip": 24608,
+      "name": "Capella",
+      "aliases": [],
+      "mag": 0.08,
+      "ra": 79.172329,
+      "dec": 45.997991,
+      "ly": 42.199,
+      "spect": "M1: comp"
+    },
+    {
+      "hip": 24436,
+      "name": "Rigel",
+      "aliases": [],
+      "mag": 0.18,
+      "ra": 78.634468,
+      "dec": -8.201641,
+      "ly": 772.882,
+      "spect": "B8Ia"
+    },
+    {
+      "hip": 37279,
+      "name": "Procyon",
+      "aliases": [],
+      "mag": 0.4,
+      "ra": 114.825493,
+      "dec": 5.224993,
+      "ly": 11.407,
+      "spect": "F5IV-V"
+    },
+    {
+      "hip": 7588,
+      "name": "Achernar",
+      "aliases": [],
+      "mag": 0.45,
+      "ra": 24.428527,
+      "dec": -57.236757,
+      "ly": 143.808,
+      "spect": "B3Vp"
+    },
+    {
+      "hip": 27989,
+      "name": "Betelgeuze",
+      "aliases": [
+        "Betelgeuse"
+      ],
+      "mag": 0.45,
+      "ra": 88.792939,
+      "dec": 7.407063,
+      "ly": 427.466,
+      "spect": "M2Ib"
+    },
+    {
+      "hip": 68702,
+      "name": "Hadar",
+      "aliases": [],
+      "mag": 0.61,
+      "ra": 210.955852,
+      "dec": -60.373039,
+      "ly": 525.212,
+      "spect": "B1III"
+    },
+    {
+      "hip": 97649,
+      "name": "Altair",
+      "aliases": [],
+      "mag": 0.76,
+      "ra": 297.695829,
+      "dec": 8.868322,
+      "ly": 16.774,
+      "spect": "A7IV-V"
+    },
+    {
+      "hip": 60718,
+      "name": "Acrux",
+      "aliases": [],
+      "mag": 0.77,
+      "ra": 186.649566,
+      "dec": -63.099092,
+      "ly": 320.704,
+      "spect": "B0.5IV"
+    },
+    {
+      "hip": 21421,
+      "name": "Aldebaran",
+      "aliases": [],
+      "mag": 0.87,
+      "ra": 68.980161,
+      "dec": 16.509301,
+      "ly": 65.114,
+      "spect": "K5III"
+    },
+    {
+      "hip": 65474,
+      "name": "Spica",
+      "aliases": [],
+      "mag": 0.98,
+      "ra": 201.298247,
+      "dec": -11.161322,
+      "ly": 262.184,
+      "spect": "B1V"
+    },
+    {
+      "hip": 80763,
+      "name": "Antares",
+      "aliases": [],
+      "mag": 1.06,
+      "ra": 247.35192,
+      "dec": -26.432002,
+      "ly": 603.993,
+      "spect": "M1Ib + B2.5V"
+    },
+    {
+      "hip": 37826,
+      "name": "Pollux",
+      "aliases": [],
+      "mag": 1.16,
+      "ra": 116.32896,
+      "dec": 28.026199,
+      "ly": 33.715,
+      "spect": "K0IIIvar"
+    },
+    {
+      "hip": 113368,
+      "name": "Fomalhaut",
+      "aliases": [],
+      "mag": 1.17,
+      "ra": 344.412694,
+      "dec": -29.622236,
+      "ly": 25.074,
+      "spect": "A3V"
+    },
+    {
+      "hip": 62434,
+      "name": "Mimosa",
+      "aliases": [],
+      "mag": 1.25,
+      "ra": 191.930263,
+      "dec": -59.688764,
+      "ly": 352.601,
+      "spect": "B0.5III"
+    },
+    {
+      "hip": 102098,
+      "name": "Deneb",
+      "aliases": [],
+      "mag": 1.25,
+      "ra": 310.357978,
+      "dec": 45.280338,
+      "ly": 3229.271,
+      "spect": "A2Ia"
+    },
+    {
+      "hip": 71681,
+      "name": "Alpha Centauri B",
+      "aliases": [
+        "Toliman"
+      ],
+      "mag": 1.35,
+      "ra": 219.89617,
+      "dec": -60.837156,
+      "ly": 4.395,
+      "spect": "K1V"
+    },
+    {
+      "hip": 49669,
+      "name": "Regulus",
+      "aliases": [],
+      "mag": 1.36,
+      "ra": 152.092961,
+      "dec": 11.967207,
+      "ly": 77.49,
+      "spect": "B7V"
+    },
+    {
+      "hip": 33579,
+      "name": "Adhara",
+      "aliases": [],
+      "mag": 1.5,
+      "ra": 104.656452,
+      "dec": -28.972084,
+      "ly": 430.854,
+      "spect": "B2II"
+    },
+    {
+      "hip": 36850,
+      "name": "Castor",
+      "aliases": [],
+      "mag": 1.58,
+      "ra": 113.649428,
+      "dec": 31.888276,
+      "ly": 51.55,
+      "spect": "A2Vm"
+    },
+    {
+      "hip": 61084,
+      "name": "Gacrux",
+      "aliases": [],
+      "mag": 1.59,
+      "ra": 187.791497,
+      "dec": -57.113212,
+      "ly": 87.936,
+      "spect": "M4III"
+    },
+    {
+      "hip": 85927,
+      "name": "Shaula",
+      "aliases": [],
+      "mag": 1.62,
+      "ra": 263.402167,
+      "dec": -37.103821,
+      "ly": 702.923,
+      "spect": "B1.5IV+..."
+    },
+    {
+      "hip": 25336,
+      "name": "Bellatrix",
+      "aliases": [],
+      "mag": 1.64,
+      "ra": 81.282763,
+      "dec": 6.349702,
+      "ly": 243.038,
+      "spect": "B2III"
+    },
+    {
+      "hip": 25428,
+      "name": "Elnath",
+      "aliases": [],
+      "mag": 1.65,
+      "ra": 81.572972,
+      "dec": 28.60745,
+      "ly": 131.039,
+      "spect": "B7III"
+    },
+    {
+      "hip": 45238,
+      "name": "Miaplacidus",
+      "aliases": [],
+      "mag": 1.67,
+      "ra": 138.299898,
+      "dec": -69.717208,
+      "ly": 111.164,
+      "spect": "A2IV"
+    },
+    {
+      "hip": 26311,
+      "name": "Alnilam",
+      "aliases": [],
+      "mag": 1.69,
+      "ra": 84.053389,
+      "dec": -1.20192,
+      "ly": 1342.207,
+      "spect": "B0Ia"
+    },
+    {
+      "hip": 109268,
+      "name": "Alnair",
+      "aliases": [],
+      "mag": 1.73,
+      "ra": 332.058273,
+      "dec": -46.960975,
+      "ly": 101.417,
+      "spect": "B7IV"
+    },
+    {
+      "hip": 26727,
+      "name": "Alnitak",
+      "aliases": [],
+      "mag": 1.74,
+      "ra": 85.189696,
+      "dec": -1.942572,
+      "ly": 817.435,
+      "spect": "O9.5Ib SB"
+    },
+    {
+      "hip": 39953,
+      "name": "HIP 39953",
+      "aliases": [],
+      "mag": 1.75,
+      "ra": 122.383126,
+      "dec": -47.336588,
+      "ly": 840.609,
+      "spect": "WC8 + O9I"
+    },
+    {
+      "hip": 62956,
+      "name": "Alioth",
+      "aliases": [],
+      "mag": 1.76,
+      "ra": 193.507289,
+      "dec": 55.959821,
+      "ly": 80.932,
+      "spect": "A0p"
+    },
+    {
+      "hip": 15863,
+      "name": "Mirfak",
+      "aliases": [],
+      "mag": 1.79,
+      "ra": 51.08071,
+      "dec": 49.86118,
+      "ly": 591.935,
+      "spect": "F5Ib"
+    },
+    {
+      "hip": 90185,
+      "name": "Kaus Australis",
+      "aliases": [],
+      "mag": 1.79,
+      "ra": 276.042993,
+      "dec": -34.384616,
+      "ly": 144.637,
+      "spect": "B9.5III"
+    },
+    {
+      "hip": 54061,
+      "name": "Dubhe",
+      "aliases": [],
+      "mag": 1.81,
+      "ra": 165.931953,
+      "dec": 61.751033,
+      "ly": 123.638,
+      "spect": "F7V comp"
+    },
+    {
+      "hip": 34444,
+      "name": "Wezen",
+      "aliases": [],
+      "mag": 1.83,
+      "ra": 107.097851,
+      "dec": -26.3932,
+      "ly": 1792.068,
+      "spect": "F8Ia"
+    },
+    {
+      "hip": 67301,
+      "name": "Alkaid",
+      "aliases": [],
+      "mag": 1.85,
+      "ra": 206.885157,
+      "dec": 49.313265,
+      "ly": 100.697,
+      "spect": "B3V SB"
+    },
+    {
+      "hip": 41037,
+      "name": "Avior",
+      "aliases": [],
+      "mag": 1.86,
+      "ra": 125.628482,
+      "dec": -59.509483,
+      "ly": 632.086,
+      "spect": "K3III+B2V"
+    },
+    {
+      "hip": 86228,
+      "name": "Sargas",
+      "aliases": [],
+      "mag": 1.86,
+      "ra": 264.329711,
+      "dec": -42.997824,
+      "ly": 272.024,
+      "spect": "F1II"
+    },
+    {
+      "hip": 28360,
+      "name": "Menkalinan",
+      "aliases": [],
+      "mag": 1.9,
+      "ra": 89.882179,
+      "dec": 44.947433,
+      "ly": 82.114,
+      "spect": "A2V"
+    },
+    {
+      "hip": 82273,
+      "name": "Atria",
+      "aliases": [],
+      "mag": 1.91,
+      "ra": 252.166229,
+      "dec": -69.027715,
+      "ly": 415.486,
+      "spect": "K2IIb-IIIa"
+    },
+    {
+      "hip": 31681,
+      "name": "Alhena",
+      "aliases": [],
+      "mag": 1.93,
+      "ra": 99.427921,
+      "dec": 16.399252,
+      "ly": 104.806,
+      "spect": "A0IV"
+    },
+    {
+      "hip": 42913,
+      "name": "Alsephina",
+      "aliases": [],
+      "mag": 1.93,
+      "ra": 131.175943,
+      "dec": -54.708821,
+      "ly": 79.745,
+      "spect": "A1V"
+    },
+    {
+      "hip": 100751,
+      "name": "Peacock",
+      "aliases": [],
+      "mag": 1.94,
+      "ra": 306.411908,
+      "dec": -56.73509,
+      "ly": 183.234,
+      "spect": "B2IV"
+    },
+    {
+      "hip": 11767,
+      "name": "Poolster",
+      "aliases": [
+        "Polaris"
+      ],
+      "mag": 1.97,
+      "ra": 37.954515,
+      "dec": 89.26411,
+      "ly": 431.424,
+      "spect": "F7:Ib-IIv SB"
+    },
+    {
+      "hip": 30324,
+      "name": "Mirzam",
+      "aliases": [],
+      "mag": 1.98,
+      "ra": 95.674939,
+      "dec": -17.955918,
+      "ly": 499.474,
+      "spect": "B1II/III"
+    },
+    {
+      "hip": 46390,
+      "name": "Alphard",
+      "aliases": [],
+      "mag": 1.99,
+      "ra": 141.896847,
+      "dec": -8.658603,
+      "ly": 177.259,
+      "spect": "K3III"
+    },
+    {
+      "hip": 9884,
+      "name": "Hamal",
+      "aliases": [],
+      "mag": 2.01,
+      "ra": 31.793363,
+      "dec": 23.462423,
+      "ly": 65.917,
+      "spect": "K2III"
+    },
+    {
+      "hip": 50583,
+      "name": "Algieba",
+      "aliases": [],
+      "mag": 2.01,
+      "ra": 154.993144,
+      "dec": 19.841489,
+      "ly": 125.638,
+      "spect": "K0III"
+    },
+    {
+      "hip": 3419,
+      "name": "Diphda",
+      "aliases": [],
+      "mag": 2.04,
+      "ra": 10.897379,
+      "dec": -17.986605,
+      "ly": 95.816,
+      "spect": "K0III"
+    },
+    {
+      "hip": 92855,
+      "name": "Nunki",
+      "aliases": [],
+      "mag": 2.05,
+      "ra": 283.816357,
+      "dec": -26.296722,
+      "ly": 224.317,
+      "spect": "B2.5V"
+    },
+    {
+      "hip": 68933,
+      "name": "Menkent",
+      "aliases": [],
+      "mag": 2.06,
+      "ra": 211.670619,
+      "dec": -36.369954,
+      "ly": 60.941,
+      "spect": "K0IIIb"
+    },
+    {
+      "hip": 677,
+      "name": "Alpheratz",
+      "aliases": [],
+      "mag": 2.07,
+      "ra": 2.096911,
+      "dec": 29.090432,
+      "ly": 97.07,
+      "spect": "B9p"
+    },
+    {
+      "hip": 5447,
+      "name": "Mirach",
+      "aliases": [],
+      "mag": 2.07,
+      "ra": 17.433015,
+      "dec": 35.620558,
+      "ly": 199.362,
+      "spect": "M0IIIvar"
+    },
+    {
+      "hip": 27366,
+      "name": "Saiph",
+      "aliases": [],
+      "mag": 2.07,
+      "ra": 86.93912,
+      "dec": -9.669605,
+      "ly": 721.585,
+      "spect": "B0.5Iavar"
+    },
+    {
+      "hip": 72607,
+      "name": "Kochab",
+      "aliases": [],
+      "mag": 2.07,
+      "ra": 222.67636,
+      "dec": 74.155505,
+      "ly": 126.466,
+      "spect": "K4IIIvar"
+    },
+    {
+      "hip": 112122,
+      "name": "Tiaki",
+      "aliases": [],
+      "mag": 2.07,
+      "ra": 340.666878,
+      "dec": -46.884577,
+      "ly": 170.139,
+      "spect": "M5III"
+    },
+    {
+      "hip": 86032,
+      "name": "Rasalhague",
+      "aliases": [],
+      "mag": 2.08,
+      "ra": 263.733627,
+      "dec": 12.560035,
+      "ly": 46.701,
+      "spect": "A5III"
+    },
+    {
+      "hip": 14576,
+      "name": "Algol",
+      "aliases": [],
+      "mag": 2.09,
+      "ra": 47.042215,
+      "dec": 40.955648,
+      "ly": 92.816,
+      "spect": "B8V"
+    },
+    {
+      "hip": 9640,
+      "name": "Almach",
+      "aliases": [],
+      "mag": 2.1,
+      "ra": 30.974804,
+      "dec": 42.329725,
+      "ly": 354.904,
+      "spect": "B8V"
+    },
+    {
+      "hip": 57632,
+      "name": "Denebola",
+      "aliases": [],
+      "mag": 2.14,
+      "ra": 177.264907,
+      "dec": 14.57206,
+      "ly": 36.175,
+      "spect": "A3Vvar"
+    },
+    {
+      "hip": 4427,
+      "name": "HIP 4427",
+      "aliases": [],
+      "mag": 2.15,
+      "ra": 14.177216,
+      "dec": 60.71674,
+      "ly": 613.076,
+      "spect": "B0IV:evar"
+    },
+    {
+      "hip": 61932,
+      "name": "HIP 61932",
+      "aliases": [],
+      "mag": 2.2,
+      "ra": 190.379328,
+      "dec": -48.959888,
+      "ly": 130.41,
+      "spect": "A1IV"
+    },
+    {
+      "hip": 39429,
+      "name": "Naos",
+      "aliases": [],
+      "mag": 2.21,
+      "ra": 120.896028,
+      "dec": -40.003148,
+      "ly": 1399.813,
+      "spect": "O5IAf"
+    },
+    {
+      "hip": 45556,
+      "name": "Aspidiske",
+      "aliases": [],
+      "mag": 2.21,
+      "ra": 139.272528,
+      "dec": -59.275229,
+      "ly": 692.476,
+      "spect": "A8Ib"
+    },
+    {
+      "hip": 76267,
+      "name": "Alphecca",
+      "aliases": [],
+      "mag": 2.22,
+      "ra": 233.67195,
+      "dec": 26.714693,
+      "ly": 74.721,
+      "spect": "A0V"
+    },
+    {
+      "hip": 44816,
+      "name": "Suhail",
+      "aliases": [],
+      "mag": 2.23,
+      "ra": 136.998994,
+      "dec": -43.432589,
+      "ly": 573.21,
+      "spect": "K4Ib-II"
+    },
+    {
+      "hip": 65378,
+      "name": "Mizar",
+      "aliases": [],
+      "mag": 2.23,
+      "ra": 200.981429,
+      "dec": 54.925362,
+      "ly": 78.159,
+      "spect": "A2V"
+    },
+    {
+      "hip": 100453,
+      "name": "Sadr",
+      "aliases": [],
+      "mag": 2.23,
+      "ra": 305.557091,
+      "dec": 40.256679,
+      "ly": 1524.095,
+      "spect": "F8Ib"
+    },
+    {
+      "hip": 3179,
+      "name": "Schedar",
+      "aliases": [],
+      "mag": 2.24,
+      "ra": 10.126835,
+      "dec": 56.537331,
+      "ly": 228.561,
+      "spect": "K0II-IIIvar"
+    },
+    {
+      "hip": 87833,
+      "name": "Eltanin",
+      "aliases": [],
+      "mag": 2.24,
+      "ra": 269.151541,
+      "dec": 51.488895,
+      "ly": 147.582,
+      "spect": "K5III"
+    },
+    {
+      "hip": 25930,
+      "name": "Mintaka",
+      "aliases": [],
+      "mag": 2.25,
+      "ra": 83.00167,
+      "dec": -0.299092,
+      "ly": 916.17,
+      "spect": "O9.5II"
+    },
+    {
+      "hip": 746,
+      "name": "Caph",
+      "aliases": [],
+      "mag": 2.28,
+      "ra": 2.294521,
+      "dec": 59.14978,
+      "ly": 54.459,
+      "spect": "F2III-IV"
+    },
+    {
+      "hip": 66657,
+      "name": "HIP 66657",
+      "aliases": [],
+      "mag": 2.29,
+      "ra": 204.97191,
+      "dec": -53.466394,
+      "ly": 375.756,
+      "spect": "B1III"
+    },
+    {
+      "hip": 78401,
+      "name": "Dschubba",
+      "aliases": [],
+      "mag": 2.29,
+      "ra": 240.083359,
+      "dec": -22.62171,
+      "ly": 401.67,
+      "spect": "B0.2IV"
+    },
+    {
+      "hip": 82396,
+      "name": "Larawag",
+      "aliases": [],
+      "mag": 2.29,
+      "ra": 252.540887,
+      "dec": -34.293232,
+      "ly": 65.428,
+      "spect": "K2IIIb"
+    },
+    {
+      "hip": 71860,
+      "name": "HIP 71860",
+      "aliases": [],
+      "mag": 2.3,
+      "ra": 220.482315,
+      "dec": -47.3882,
+      "ly": 548.162,
+      "spect": "B1.5III"
+    },
+    {
+      "hip": 71352,
+      "name": "HIP 71352",
+      "aliases": [],
+      "mag": 2.33,
+      "ra": 218.876766,
+      "dec": -42.157824,
+      "ly": 308.568,
+      "spect": "B1Vn + A"
+    },
+    {
+      "hip": 53910,
+      "name": "Merak",
+      "aliases": [],
+      "mag": 2.34,
+      "ra": 165.46032,
+      "dec": 56.382427,
+      "ly": 79.415,
+      "spect": "A1V"
+    },
+    {
+      "hip": 72105,
+      "name": "Izar",
+      "aliases": [],
+      "mag": 2.35,
+      "ra": 221.24674,
+      "dec": 27.074222,
+      "ly": 209.747,
+      "spect": "A0"
+    },
+    {
+      "hip": 107315,
+      "name": "Enif",
+      "aliases": [],
+      "mag": 2.38,
+      "ra": 326.046492,
+      "dec": 9.875011,
+      "ly": 672.487,
+      "spect": "K2Ibvar"
+    },
+    {
+      "hip": 86670,
+      "name": "HIP 86670",
+      "aliases": [],
+      "mag": 2.39,
+      "ra": 265.621979,
+      "dec": -39.029983,
+      "ly": 463.949,
+      "spect": "B1.5III"
+    },
+    {
+      "hip": 2081,
+      "name": "Ankaa",
+      "aliases": [],
+      "mag": 2.4,
+      "ra": 6.571046,
+      "dec": -42.305982,
+      "ly": 77.398,
+      "spect": "K0III..."
+    },
+    {
+      "hip": 58001,
+      "name": "Phecda",
+      "aliases": [],
+      "mag": 2.41,
+      "ra": 178.457698,
+      "dec": 53.69476,
+      "ly": 83.651,
+      "spect": "A0V SB"
+    },
+    {
+      "hip": 84012,
+      "name": "Sabik",
+      "aliases": [],
+      "mag": 2.43,
+      "ra": 257.594531,
+      "dec": -15.72491,
+      "ly": 84.126,
+      "spect": "A2.5Va"
+    },
+    {
+      "hip": 113881,
+      "name": "Scheat",
+      "aliases": [],
+      "mag": 2.44,
+      "ra": 345.943573,
+      "dec": 28.082789,
+      "ly": 199.24,
+      "spect": "M2II-IIIvar"
+    },
+    {
+      "hip": 35904,
+      "name": "Aludra",
+      "aliases": [],
+      "mag": 2.45,
+      "ra": 111.023761,
+      "dec": -29.303104,
+      "ly": 3197.612,
+      "spect": "B5Ia"
+    },
+    {
+      "hip": 105199,
+      "name": "Alderamin",
+      "aliases": [],
+      "mag": 2.45,
+      "ra": 319.644881,
+      "dec": 62.585573,
+      "ly": 48.797,
+      "spect": "A7IV-V"
+    },
+    {
+      "hip": 45941,
+      "name": "Markeb",
+      "aliases": [],
+      "mag": 2.47,
+      "ra": 140.52841,
+      "dec": -55.010668,
+      "ly": 539.101,
+      "spect": "B2IV"
+    },
+    {
+      "hip": 102488,
+      "name": "Aljanah",
+      "aliases": [],
+      "mag": 2.48,
+      "ra": 311.552845,
+      "dec": 33.970256,
+      "ly": 72.063,
+      "spect": "K0III"
+    },
+    {
+      "hip": 113963,
+      "name": "Markab",
+      "aliases": [],
+      "mag": 2.49,
+      "ra": 346.190224,
+      "dec": 15.205264,
+      "ly": 139.622,
+      "spect": "B9.5III"
+    },
+    {
+      "hip": 14135,
+      "name": "Menkar",
+      "aliases": [],
+      "mag": 2.54,
+      "ra": 45.569884,
+      "dec": 4.089734,
+      "ly": 220.079,
+      "spect": "M2III"
+    },
+    {
+      "hip": 81377,
+      "name": "HIP 81377",
+      "aliases": [],
+      "mag": 2.54,
+      "ra": 249.289741,
+      "dec": -10.56709,
+      "ly": 458.085,
+      "spect": "O9.5V"
+    },
+    {
+      "hip": 68002,
+      "name": "HIP 68002",
+      "aliases": [],
+      "mag": 2.55,
+      "ra": 208.884941,
+      "dec": -47.288375,
+      "ly": 384.618,
+      "spect": "B2.5IV"
+    },
+    {
+      "hip": 54872,
+      "name": "Zosma",
+      "aliases": [],
+      "mag": 2.56,
+      "ra": 168.527089,
+      "dec": 20.523717,
+      "ly": 57.706,
+      "spect": "A4V"
+    },
+    {
+      "hip": 78820,
+      "name": "Acrab",
+      "aliases": [],
+      "mag": 2.56,
+      "ra": 241.359295,
+      "dec": -19.805453,
+      "ly": 530.336,
+      "spect": "B0.5V"
+    },
+    {
+      "hip": 25985,
+      "name": "Arneb",
+      "aliases": [],
+      "mag": 2.58,
+      "ra": 83.182566,
+      "dec": -17.822289,
+      "ly": 1284.08,
+      "spect": "F0Ib"
+    },
+    {
+      "hip": 59196,
+      "name": "HIP 59196",
+      "aliases": [],
+      "mag": 2.58,
+      "ra": 182.089583,
+      "dec": -50.722426,
+      "ly": 395.341,
+      "spect": "B2IVne"
+    },
+    {
+      "hip": 59803,
+      "name": "Gienah",
+      "aliases": [],
+      "mag": 2.58,
+      "ra": 183.951543,
+      "dec": -17.541929,
+      "ly": 164.892,
+      "spect": "B8III"
+    },
+    {
+      "hip": 93506,
+      "name": "Ascella",
+      "aliases": [],
+      "mag": 2.6,
+      "ra": 285.652975,
+      "dec": -29.880105,
+      "ly": 89.089,
+      "spect": "A3IV"
+    },
+    {
+      "hip": 74785,
+      "name": "Zubeneschamali",
+      "aliases": [],
+      "mag": 2.61,
+      "ra": 229.251728,
+      "dec": -9.382917,
+      "ly": 160.037,
+      "spect": "B8V"
+    },
+    {
+      "hip": 77070,
+      "name": "Unukalhai",
+      "aliases": [],
+      "mag": 2.63,
+      "ra": 236.066979,
+      "dec": 6.425627,
+      "ly": 73.228,
+      "spect": "K2III"
+    },
+    {
+      "hip": 8903,
+      "name": "Sheratan",
+      "aliases": [],
+      "mag": 2.64,
+      "ra": 28.660038,
+      "dec": 20.808035,
+      "ly": 59.583,
+      "spect": "A5V..."
+    },
+    {
+      "hip": 26634,
+      "name": "Phact",
+      "aliases": [],
+      "mag": 2.65,
+      "ra": 84.912249,
+      "dec": -34.074108,
+      "ly": 268.221,
+      "spect": "B7IV"
+    },
+    {
+      "hip": 28380,
+      "name": "Mahasim",
+      "aliases": [],
+      "mag": 2.65,
+      "ra": 89.930287,
+      "dec": 37.212585,
+      "ly": 173.211,
+      "spect": "A0p Si"
+    },
+    {
+      "hip": 61359,
+      "name": "Kraz",
+      "aliases": [],
+      "mag": 2.65,
+      "ra": 188.596811,
+      "dec": -23.396759,
+      "ly": 139.741,
+      "spect": "G5II"
+    },
+    {
+      "hip": 6686,
+      "name": "Ruchbah",
+      "aliases": [],
+      "mag": 2.66,
+      "ra": 21.453968,
+      "dec": 60.235283,
+      "ly": 99.408,
+      "spect": "A5Vv SB"
+    },
+    {
+      "hip": 67927,
+      "name": "Muphrid",
+      "aliases": [],
+      "mag": 2.68,
+      "ra": 208.671161,
+      "dec": 18.397717,
+      "ly": 36.992,
+      "spect": "G0IV"
+    },
+    {
+      "hip": 73273,
+      "name": "HIP 73273",
+      "aliases": [],
+      "mag": 2.68,
+      "ra": 224.633028,
+      "dec": -43.13396,
+      "ly": 523.525,
+      "spect": "B2III"
+    },
+    {
+      "hip": 23015,
+      "name": "Hassaleh",
+      "aliases": [],
+      "mag": 2.69,
+      "ra": 74.248412,
+      "dec": 33.16609,
+      "ly": 512.019,
+      "spect": "K3IIvar"
+    },
+    {
+      "hip": 52727,
+      "name": "HIP 52727",
+      "aliases": [],
+      "mag": 2.69,
+      "ra": 161.692409,
+      "dec": -49.420255,
+      "ly": 115.74,
+      "spect": "G5III SB"
+    },
+    {
+      "hip": 61585,
+      "name": "HIP 61585",
+      "aliases": [],
+      "mag": 2.69,
+      "ra": 189.29591,
+      "dec": -69.135564,
+      "ly": 305.676,
+      "spect": "B2IV-V"
+    },
+    {
+      "hip": 85696,
+      "name": "Lesath",
+      "aliases": [],
+      "mag": 2.7,
+      "ra": 262.690982,
+      "dec": -37.295811,
+      "ly": 518.532,
+      "spect": "B2IV"
+    },
+    {
+      "hip": 35264,
+      "name": "HIP 35264",
+      "aliases": [],
+      "mag": 2.71,
+      "ra": 109.285652,
+      "dec": -37.09747,
+      "ly": 1094.484,
+      "spect": "K3Ib"
+    },
+    {
+      "hip": 89931,
+      "name": "Kaus Media",
+      "aliases": [],
+      "mag": 2.72,
+      "ra": 275.248507,
+      "dec": -29.828103,
+      "ly": 305.676,
+      "spect": "K3III"
+    },
+    {
+      "hip": 97278,
+      "name": "Tarazed",
+      "aliases": [],
+      "mag": 2.72,
+      "ra": 296.564915,
+      "dec": 10.613261,
+      "ly": 460.673,
+      "spect": "K3II"
+    },
+    {
+      "hip": 79593,
+      "name": "Yed Prior",
+      "aliases": [],
+      "mag": 2.73,
+      "ra": 243.586414,
+      "dec": -3.694323,
+      "ly": 170.228,
+      "spect": "M1III"
+    },
+    {
+      "hip": 80331,
+      "name": "Athebyne",
+      "aliases": [],
+      "mag": 2.73,
+      "ra": 245.997859,
+      "dec": 61.514213,
+      "ly": 87.724,
+      "spect": "G8III"
+    },
+    {
+      "hip": 52419,
+      "name": "HIP 52419",
+      "aliases": [],
+      "mag": 2.74,
+      "ra": 160.739172,
+      "dec": -64.39445,
+      "ly": 438.972,
+      "spect": "B0Vp"
+    },
+    {
+      "hip": 61941,
+      "name": "Porrima",
+      "aliases": [],
+      "mag": 2.74,
+      "ra": 190.415176,
+      "dec": -1.449375,
+      "ly": 38.585,
+      "spect": "F0V+..."
+    },
+    {
+      "hip": 26241,
+      "name": "Hatysa",
+      "aliases": [],
+      "mag": 2.75,
+      "ra": 83.85826,
+      "dec": -5.909901,
+      "ly": 1325.839,
+      "spect": "O9III"
+    },
+    {
+      "hip": 65109,
+      "name": "HIP 65109",
+      "aliases": [],
+      "mag": 2.75,
+      "ra": 200.14924,
+      "dec": -36.712295,
+      "ly": 58.619,
+      "spect": "A2V"
+    },
+    {
+      "hip": 72622,
+      "name": "Zubenelgenubi",
+      "aliases": [],
+      "mag": 2.75,
+      "ra": 222.719638,
+      "dec": -16.041778,
+      "ly": 77.197,
+      "spect": "A3IV"
+    },
+    {
+      "hip": 86742,
+      "name": "Cebalrai",
+      "aliases": [],
+      "mag": 2.76,
+      "ra": 265.868138,
+      "dec": 4.567303,
+      "ly": 81.99,
+      "spect": "K2III"
+    },
+    {
+      "hip": 23875,
+      "name": "Cursa",
+      "aliases": [],
+      "mag": 2.78,
+      "ra": 76.962438,
+      "dec": -5.086446,
+      "ly": 88.847,
+      "spect": "A3IIIvar"
+    },
+    {
+      "hip": 80816,
+      "name": "Kornephoros",
+      "aliases": [],
+      "mag": 2.78,
+      "ra": 247.555,
+      "dec": 21.489613,
+      "ly": 147.783,
+      "spect": "G8III"
+    },
+    {
+      "hip": 84345,
+      "name": "Rasalgethi",
+      "aliases": [],
+      "mag": 2.78,
+      "ra": 258.66191,
+      "dec": 14.390333,
+      "ly": 382.364,
+      "spect": "M5IIvar"
+    },
+    {
+      "hip": 59747,
+      "name": "Imai",
+      "aliases": [],
+      "mag": 2.79,
+      "ra": 183.786315,
+      "dec": -58.748928,
+      "ly": 364.014,
+      "spect": "B2IV"
+    },
+    {
+      "hip": 85670,
+      "name": "Rastaban",
+      "aliases": [],
+      "mag": 2.79,
+      "ra": 262.608175,
+      "dec": 52.301387,
+      "ly": 361.592,
+      "spect": "G2II"
+    },
+    {
+      "hip": 76297,
+      "name": "HIP 76297",
+      "aliases": [],
+      "mag": 2.8,
+      "ra": 233.7852,
+      "dec": -41.166757,
+      "ly": 567.228,
+      "spect": "B2IV"
+    },
+    {
+      "hip": 25606,
+      "name": "Nihal",
+      "aliases": [],
+      "mag": 2.81,
+      "ra": 82.061347,
+      "dec": -20.759441,
+      "ly": 159.178,
+      "spect": "G5II"
+    },
+    {
+      "hip": 81693,
+      "name": "HIP 81693",
+      "aliases": [],
+      "mag": 2.81,
+      "ra": 250.321501,
+      "dec": 31.602726,
+      "ly": 35.211,
+      "spect": "F9IV"
+    },
+    {
+      "hip": 2021,
+      "name": "HIP 2021",
+      "aliases": [],
+      "mag": 2.82,
+      "ra": 6.4378,
+      "dec": -77.254246,
+      "ly": 24.38,
+      "spect": "G2IV"
+    },
+    {
+      "hip": 81266,
+      "name": "Paikauhale",
+      "aliases": [],
+      "mag": 2.82,
+      "ra": 248.970641,
+      "dec": -28.216016,
+      "ly": 429.719,
+      "spect": "B0V"
+    },
+    {
+      "hip": 90496,
+      "name": "Kaus Borealis",
+      "aliases": [],
+      "mag": 2.82,
+      "ra": 276.992669,
+      "dec": -25.4217,
+      "ly": 77.288,
+      "spect": "K1IIIb"
+    },
+    {
+      "hip": 1067,
+      "name": "Algenib",
+      "aliases": [],
+      "mag": 2.83,
+      "ra": 3.30897,
+      "dec": 15.183596,
+      "ly": 333.153,
+      "spect": "B2IV"
+    },
+    {
+      "hip": 39757,
+      "name": "Tureis",
+      "aliases": [],
+      "mag": 2.83,
+      "ra": 121.886037,
+      "dec": -24.304324,
+      "ly": 62.734,
+      "spect": "F2mF5IIp"
+    },
+    {
+      "hip": 77952,
+      "name": "HIP 77952",
+      "aliases": [],
+      "mag": 2.83,
+      "ra": 238.785676,
+      "dec": -63.430727,
+      "ly": 40.147,
+      "spect": "F2III"
+    },
+    {
+      "hip": 18246,
+      "name": "HIP 18246",
+      "aliases": [],
+      "mag": 2.84,
+      "ra": 58.533006,
+      "dec": 31.883636,
+      "ly": 982.399,
+      "spect": "B1Ib"
+    },
+    {
+      "hip": 85258,
+      "name": "HIP 85258",
+      "aliases": [],
+      "mag": 2.84,
+      "ra": 261.324953,
+      "dec": -55.529884,
+      "ly": 602.877,
+      "spect": "K3Ib-II"
+    },
+    {
+      "hip": 85792,
+      "name": "HIP 85792",
+      "aliases": [],
+      "mag": 2.84,
+      "ra": 262.960389,
+      "dec": -49.876145,
+      "ly": 242.315,
+      "spect": "B2Vne"
+    },
+    {
+      "hip": 17702,
+      "name": "Alcyone",
+      "aliases": [],
+      "mag": 2.85,
+      "ra": 56.871152,
+      "dec": 24.105137,
+      "ly": 367.707,
+      "spect": "B7III"
+    },
+    {
+      "hip": 63608,
+      "name": "Vindemiatrix",
+      "aliases": [],
+      "mag": 2.85,
+      "ra": 195.544155,
+      "dec": 10.95915,
+      "ly": 102.243,
+      "spect": "G8IIIvar"
+    },
+    {
+      "hip": 107556,
+      "name": "Deneb Algedi",
+      "aliases": [],
+      "mag": 2.85,
+      "ra": 326.760188,
+      "dec": -16.127286,
+      "ly": 38.562,
+      "spect": "A5mF2 (IV)"
+    },
+    {
+      "hip": 9236,
+      "name": "HIP 9236",
+      "aliases": [],
+      "mag": 2.86,
+      "ra": 29.692473,
+      "dec": -61.569859,
+      "ly": 71.307,
+      "spect": "F0V"
+    },
+    {
+      "hip": 97165,
+      "name": "Fawaris",
+      "aliases": [],
+      "mag": 2.86,
+      "ra": 296.243658,
+      "dec": 45.13081,
+      "ly": 171.031,
+      "spect": "B9.5III"
+    },
+    {
+      "hip": 30343,
+      "name": "Tejat",
+      "aliases": [],
+      "mag": 2.87,
+      "ra": 95.740113,
+      "dec": 22.513586,
+      "ly": 231.81,
+      "spect": "M3IIIvar"
+    },
+    {
+      "hip": 74946,
+      "name": "HIP 74946",
+      "aliases": [],
+      "mag": 2.87,
+      "ra": 229.727426,
+      "dec": -68.679545,
+      "ly": 182.721,
+      "spect": "A1V"
+    },
+    {
+      "hip": 110130,
+      "name": "HIP 110130",
+      "aliases": [],
+      "mag": 2.87,
+      "ra": 334.625392,
+      "dec": -60.259588,
+      "ly": 198.634,
+      "spect": "K3III"
+    },
+    {
+      "hip": 13847,
+      "name": "Acamar",
+      "aliases": [],
+      "mag": 2.88,
+      "ra": 44.565311,
+      "dec": -40.304672,
+      "ly": 161.304,
+      "spect": "A4III+..."
+    },
+    {
+      "hip": 94141,
+      "name": "Albaldah",
+      "aliases": [],
+      "mag": 2.88,
+      "ra": 287.440971,
+      "dec": -21.023615,
+      "ly": 440.157,
+      "spect": "F2II/III"
+    },
+    {
+      "hip": 36188,
+      "name": "Gomeisa",
+      "aliases": [],
+      "mag": 2.89,
+      "ra": 111.787678,
+      "dec": 8.289315,
+      "ly": 170.228,
+      "spect": "B8Vvar"
+    },
+    {
+      "hip": 63125,
+      "name": "Cor Caroli",
+      "aliases": [],
+      "mag": 2.89,
+      "ra": 194.006947,
+      "dec": 38.31838,
+      "ly": 110.188,
+      "spect": "A0spe..."
+    },
+    {
+      "hip": 78265,
+      "name": "Fang",
+      "aliases": [],
+      "mag": 2.89,
+      "ra": 239.71297,
+      "dec": -26.114105,
+      "ly": 459.375,
+      "spect": "B1V + B2V"
+    },
+    {
+      "hip": 18532,
+      "name": "HIP 18532",
+      "aliases": [],
+      "mag": 2.9,
+      "ra": 59.463461,
+      "dec": 40.010215,
+      "ly": 538.212,
+      "spect": "B0.5V"
+    },
+    {
+      "hip": 80112,
+      "name": "Alniyat",
+      "aliases": [],
+      "mag": 2.9,
+      "ra": 245.29715,
+      "dec": -25.592796,
+      "ly": 734.586,
+      "spect": "B1III"
+    },
+    {
+      "hip": 106278,
+      "name": "Sadalsuud",
+      "aliases": [],
+      "mag": 2.9,
+      "ra": 322.889725,
+      "dec": -5.571172,
+      "ly": 611.926,
+      "spect": "G0Ib"
+    },
+    {
+      "hip": 14328,
+      "name": "HIP 14328",
+      "aliases": [],
+      "mag": 2.91,
+      "ra": 46.199128,
+      "dec": 53.50644,
+      "ly": 256.412,
+      "spect": "G8III+..."
+    },
+    {
+      "hip": 48002,
+      "name": "HIP 48002",
+      "aliases": [],
+      "mag": 2.92,
+      "ra": 146.775507,
+      "dec": -65.072007,
+      "ly": 1622.669,
+      "spect": "A9"
+    },
+    {
+      "hip": 112158,
+      "name": "Matar",
+      "aliases": [],
+      "mag": 2.93,
+      "ra": 340.750573,
+      "dec": 30.221245,
+      "ly": 214.859,
+      "spect": "G2II-III.."
+    },
+    {
+      "hip": 32768,
+      "name": "HIP 32768",
+      "aliases": [],
+      "mag": 2.94,
+      "ra": 102.484035,
+      "dec": -50.61456,
+      "ly": 182.721,
+      "spect": "K0III..."
+    },
+    {
+      "hip": 60965,
+      "name": "Algorab",
+      "aliases": [],
+      "mag": 2.94,
+      "ra": 187.466064,
+      "dec": -16.515433,
+      "ly": 87.889,
+      "spect": "B9.5V"
+    },
+    {
+      "hip": 109074,
+      "name": "Sadalmelik",
+      "aliases": [],
+      "mag": 2.95,
+      "ra": 331.445982,
+      "dec": -0.319851,
+      "ly": 758.503,
+      "spect": "G2Ib"
+    },
+    {
+      "hip": 18543,
+      "name": "Zaurak",
+      "aliases": [],
+      "mag": 2.97,
+      "ra": 59.50736,
+      "dec": -13.508515,
+      "ly": 221.123,
+      "spect": "M1IIIb Ca-1"
+    },
+    {
+      "hip": 26451,
+      "name": "Tianguan",
+      "aliases": [],
+      "mag": 2.97,
+      "ra": 84.411191,
+      "dec": 21.142549,
+      "ly": 417.08,
+      "spect": "B4IIIp"
+    },
+    {
+      "hip": 47908,
+      "name": "HIP 47908",
+      "aliases": [],
+      "mag": 2.97,
+      "ra": 146.462804,
+      "dec": 23.774255,
+      "ly": 250.697,
+      "spect": "G0II"
+    },
+    {
+      "hip": 88635,
+      "name": "Alnasl",
+      "aliases": [],
+      "mag": 2.98,
+      "ra": 271.452029,
+      "dec": -30.424091,
+      "ly": 96.098,
+      "spect": "K0III"
+    },
+    {
+      "hip": 64962,
+      "name": "HIP 64962",
+      "aliases": [],
+      "mag": 2.99,
+      "ra": 199.730403,
+      "dec": -23.171512,
+      "ly": 132.101,
+      "spect": "G8III"
+    },
+    {
+      "hip": 87073,
+      "name": "HIP 87073",
+      "aliases": [],
+      "mag": 2.99,
+      "ra": 266.896173,
+      "dec": -40.126998,
+      "ly": 1792.068,
+      "spect": "F3Ia"
+    },
+    {
+      "hip": 93747,
+      "name": "Okab",
+      "aliases": [],
+      "mag": 2.99,
+      "ra": 286.352534,
+      "dec": 13.863478,
+      "ly": 83.246,
+      "spect": "A0Vn"
+    },
+    {
+      "hip": 10064,
+      "name": "HIP 10064",
+      "aliases": [],
+      "mag": 3.0,
+      "ra": 32.385945,
+      "dec": 34.987297,
+      "ly": 124.297,
+      "spect": "A5III"
+    },
+    {
+      "hip": 54539,
+      "name": "HIP 54539",
+      "aliases": [],
+      "mag": 3.0,
+      "ra": 167.415868,
+      "dec": 44.498487,
+      "ly": 146.851,
+      "spect": "K1III"
+    },
+    {
+      "hip": 75097,
+      "name": "Pherkad",
+      "aliases": [],
+      "mag": 3.0,
+      "ra": 230.182148,
+      "dec": 71.834016,
+      "ly": 480.348,
+      "spect": "A3II-III"
+    },
+    {
+      "hip": 82514,
+      "name": "Xamidimura",
+      "aliases": [],
+      "mag": 3.0,
+      "ra": 252.967635,
+      "dec": -38.04738,
+      "ly": 821.553,
+      "spect": "B1.5IV + B"
+    },
+    {
+      "hip": 108085,
+      "name": "Aldhanab",
+      "aliases": [],
+      "mag": 3.0,
+      "ra": 328.482185,
+      "dec": -37.364852,
+      "ly": 202.96,
+      "spect": "B8III"
+    },
+    {
+      "hip": 17358,
+      "name": "HIP 17358",
+      "aliases": [],
+      "mag": 3.01,
+      "ra": 55.731262,
+      "dec": 47.787551,
+      "ly": 527.761,
+      "spect": "B5III SB"
+    },
+    {
+      "hip": 30122,
+      "name": "Furud",
+      "aliases": [],
+      "mag": 3.02,
+      "ra": 95.078302,
+      "dec": -30.063367,
+      "ly": 336.244,
+      "spect": "B2.5V"
+    },
+    {
+      "hip": 33977,
+      "name": "HIP 33977",
+      "aliases": [],
+      "mag": 3.02,
+      "ra": 105.756136,
+      "dec": -23.833291,
+      "ly": 2568.16,
+      "spect": "B3Ia"
+    },
+    {
+      "hip": 59316,
+      "name": "HIP 59316",
+      "aliases": [],
+      "mag": 3.02,
+      "ra": 182.531169,
+      "dec": -22.619766,
+      "ly": 303.401,
+      "spect": "K2III"
+    },
+    {
+      "hip": 23416,
+      "name": "Almaaz",
+      "aliases": [],
+      "mag": 3.03,
+      "ra": 75.492226,
+      "dec": 43.823308,
+      "ly": 2038.477,
+      "spect": "F0Ia"
+    },
+    {
+      "hip": 62322,
+      "name": "HIP 62322",
+      "aliases": [],
+      "mag": 3.04,
+      "ra": 191.570027,
+      "dec": -68.108119,
+      "ly": 311.218,
+      "spect": "B2V"
+    },
+    {
+      "hip": 71075,
+      "name": "Seginus",
+      "aliases": [],
+      "mag": 3.04,
+      "ra": 218.019466,
+      "dec": 38.308253,
+      "ly": 85.181,
+      "spect": "A7IIIvar"
+    },
+    {
+      "hip": 95947,
+      "name": "Albireo",
+      "aliases": [],
+      "mag": 3.05,
+      "ra": 292.680336,
+      "dec": 27.959681,
+      "ly": 385.528,
+      "spect": "K3II+..."
+    },
+    {
+      "hip": 100345,
+      "name": "Dabih",
+      "aliases": [],
+      "mag": 3.05,
+      "ra": 305.252815,
+      "dec": -14.781367,
+      "ly": 344.047,
+      "spect": "A5:n"
+    },
+    {
+      "hip": 32246,
+      "name": "Mebsuta",
+      "aliases": [],
+      "mag": 3.06,
+      "ra": 100.983025,
+      "dec": 25.131124,
+      "ly": 903.48,
+      "spect": "A3mA6-A9"
+    },
+    {
+      "hip": 50801,
+      "name": "Tania Australis",
+      "aliases": [],
+      "mag": 3.06,
+      "ra": 155.582252,
+      "dec": 41.499516,
+      "ly": 248.784,
+      "spect": "M0III SB"
+    },
+    {
+      "hip": 94376,
+      "name": "Altais",
+      "aliases": [],
+      "mag": 3.07,
+      "ra": 288.13875,
+      "dec": 67.661541,
+      "ly": 100.232,
+      "spect": "G9III"
+    },
+    {
+      "hip": 89642,
+      "name": "HIP 89642",
+      "aliases": [],
+      "mag": 3.1,
+      "ra": 274.406813,
+      "dec": -36.761686,
+      "ly": 149.134,
+      "spect": "M2III"
+    },
+    {
+      "hip": 43813,
+      "name": "HIP 43813",
+      "aliases": [],
+      "mag": 3.11,
+      "ra": 133.848443,
+      "dec": 5.945563,
+      "ly": 150.719,
+      "spect": "G8III-IV"
+    },
+    {
+      "hip": 52943,
+      "name": "HIP 52943",
+      "aliases": [],
+      "mag": 3.11,
+      "ra": 162.406202,
+      "dec": -16.193648,
+      "ly": 138.554,
+      "spect": "K0/K1III"
+    },
+    {
+      "hip": 56561,
+      "name": "HIP 56561",
+      "aliases": [],
+      "mag": 3.11,
+      "ra": 173.945353,
+      "dec": -63.019842,
+      "ly": 409.744,
+      "spect": "B9II:"
+    },
+    {
+      "hip": 101772,
+      "name": "HIP 101772",
+      "aliases": [],
+      "mag": 3.11,
+      "ra": 309.3918,
+      "dec": -47.291502,
+      "ly": 101.259,
+      "spect": "K0III"
+    },
+    {
+      "hip": 27628,
+      "name": "Wazn",
+      "aliases": [],
+      "mag": 3.12,
+      "ra": 87.73997,
+      "dec": -35.768309,
+      "ly": 85.966,
+      "spect": "K1.5III"
+    },
+    {
+      "hip": 44127,
+      "name": "Talitha",
+      "aliases": [],
+      "mag": 3.12,
+      "ra": 134.801891,
+      "dec": 48.041826,
+      "ly": 47.74,
+      "spect": "A7IV"
+    },
+    {
+      "hip": 83081,
+      "name": "HIP 83081",
+      "aliases": [],
+      "mag": 3.12,
+      "ra": 254.655049,
+      "dec": -55.990141,
+      "ly": 574.219,
+      "spect": "K5III"
+    },
+    {
+      "hip": 84379,
+      "name": "Sarin",
+      "aliases": [],
+      "mag": 3.12,
+      "ra": 258.757961,
+      "dec": 24.839204,
+      "ly": 78.497,
+      "spect": "A3IVv SB"
+    },
+    {
+      "hip": 73334,
+      "name": "HIP 73334",
+      "aliases": [],
+      "mag": 3.13,
+      "ra": 224.790354,
+      "dec": -42.104194,
+      "ly": 539.101,
+      "spect": "B2IV"
+    },
+    {
+      "hip": 45860,
+      "name": "HIP 45860",
+      "aliases": [],
+      "mag": 3.14,
+      "ra": 140.263755,
+      "dec": 34.392562,
+      "ly": 222.026,
+      "spect": "M0IIIvar"
+    },
+    {
+      "hip": 46701,
+      "name": "HIP 46701",
+      "aliases": [],
+      "mag": 3.16,
+      "ra": 142.805495,
+      "dec": -57.034377,
+      "ly": 237.723,
+      "spect": "K5III"
+    },
+    {
+      "hip": 84380,
+      "name": "HIP 84380",
+      "aliases": [],
+      "mag": 3.16,
+      "ra": 258.76181,
+      "dec": 36.809162,
+      "ly": 366.88,
+      "spect": "K3IIvar"
+    },
+    {
+      "hip": 31685,
+      "name": "HIP 31685",
+      "aliases": [],
+      "mag": 3.17,
+      "ra": 99.440297,
+      "dec": -43.195934,
+      "ly": 423.03,
+      "spect": "B8III SB"
+    },
+    {
+      "hip": 46853,
+      "name": "HIP 46853",
+      "aliases": [],
+      "mag": 3.17,
+      "ra": 143.21431,
+      "dec": 51.6773,
+      "ly": 43.986,
+      "spect": "F6IV"
+    },
+    {
+      "hip": 83895,
+      "name": "Aldhibah",
+      "aliases": [],
+      "mag": 3.17,
+      "ra": 257.196648,
+      "dec": 65.714683,
+      "ly": 339.746,
+      "spect": "B6III"
+    },
+    {
+      "hip": 92041,
+      "name": "HIP 92041",
+      "aliases": [],
+      "mag": 3.17,
+      "ra": 281.41411,
+      "dec": -26.990778,
+      "ly": 230.662,
+      "spect": "B8.5III"
+    },
+    {
+      "hip": 23767,
+      "name": "Haedus",
+      "aliases": [],
+      "mag": 3.18,
+      "ra": 76.62872,
+      "dec": 41.234474,
+      "ly": 219.339,
+      "spect": "B3V"
+    },
+    {
+      "hip": 71908,
+      "name": "HIP 71908",
+      "aliases": [],
+      "mag": 3.18,
+      "ra": 220.626747,
+      "dec": -64.975138,
+      "ly": 53.495,
+      "spect": "F1Vp"
+    },
+    {
+      "hip": 22449,
+      "name": "Tabit",
+      "aliases": [],
+      "mag": 3.19,
+      "ra": 72.460044,
+      "dec": 6.961276,
+      "ly": 26.176,
+      "spect": "F6V"
+    },
+    {
+      "hip": 23685,
+      "name": "HIP 23685",
+      "aliases": [],
+      "mag": 3.19,
+      "ra": 76.365268,
+      "dec": -22.371033,
+      "ly": 226.655,
+      "spect": "K4III"
+    },
+    {
+      "hip": 83000,
+      "name": "HIP 83000",
+      "aliases": [],
+      "mag": 3.19,
+      "ra": 254.417072,
+      "dec": 9.375033,
+      "ly": 85.853,
+      "spect": "K2IIIvar"
+    },
+    {
+      "hip": 87261,
+      "name": "Fuyue",
+      "aliases": [],
+      "mag": 3.19,
+      "ra": 267.464508,
+      "dec": -37.043304,
+      "ly": 126.86,
+      "spect": "K0/K1III"
+    },
+    {
+      "hip": 104732,
+      "name": "HIP 104732",
+      "aliases": [],
+      "mag": 3.21,
+      "ra": 318.234109,
+      "dec": 30.226916,
+      "ly": 150.859,
+      "spect": "G8II SB"
+    },
+    {
+      "hip": 116727,
+      "name": "Errai",
+      "aliases": [],
+      "mag": 3.21,
+      "ra": 354.836871,
+      "dec": 77.632276,
+      "ly": 44.987,
+      "spect": "K1IV"
+    },
+    {
+      "hip": 75141,
+      "name": "HIP 75141",
+      "aliases": [],
+      "mag": 3.22,
+      "ra": 230.343007,
+      "dec": -40.647518,
+      "ly": 510.417,
+      "spect": "B1.5IV"
+    },
+    {
+      "hip": 79882,
+      "name": "Yed Posterior",
+      "aliases": [],
+      "mag": 3.23,
+      "ra": 244.580371,
+      "dec": -4.692511,
+      "ly": 107.5,
+      "spect": "G8III"
+    },
+    {
+      "hip": 89962,
+      "name": "HIP 89962",
+      "aliases": [],
+      "mag": 3.23,
+      "ra": 275.327503,
+      "dec": -2.898825,
+      "ly": 61.76,
+      "spect": "K0III-IV"
+    },
+    {
+      "hip": 106032,
+      "name": "Alfirk",
+      "aliases": [],
+      "mag": 3.23,
+      "ra": 322.164988,
+      "dec": 70.560716,
+      "ly": 595.176,
+      "spect": "B2IIIv SB"
+    },
+    {
+      "hip": 32607,
+      "name": "HIP 32607",
+      "aliases": [],
+      "mag": 3.24,
+      "ra": 102.047718,
+      "dec": -61.941392,
+      "ly": 98.955,
+      "spect": "A7IV"
+    },
+    {
+      "hip": 99473,
+      "name": "HIP 99473",
+      "aliases": [],
+      "mag": 3.24,
+      "ra": 302.82619,
+      "dec": -0.821461,
+      "ly": 287.109,
+      "spect": "B9.5III"
+    },
+    {
+      "hip": 36377,
+      "name": "HIP 36377",
+      "aliases": [],
+      "mag": 3.25,
+      "ra": 112.307626,
+      "dec": -43.301433,
+      "ly": 183.854,
+      "spect": "K5III SB"
+    },
+    {
+      "hip": 68895,
+      "name": "HIP 68895",
+      "aliases": [],
+      "mag": 3.25,
+      "ra": 211.592904,
+      "dec": -26.682361,
+      "ly": 101.385,
+      "spect": "K2III"
+    },
+    {
+      "hip": 73714,
+      "name": "Brachium",
+      "aliases": [],
+      "mag": 3.25,
+      "ra": 226.017565,
+      "dec": -25.281965,
+      "ly": 291.993,
+      "spect": "M3/M4III"
+    },
+    {
+      "hip": 93194,
+      "name": "Sulafat",
+      "aliases": [],
+      "mag": 3.25,
+      "ra": 284.735928,
+      "dec": 32.689557,
+      "ly": 634.545,
+      "spect": "B9III"
+    },
+    {
+      "hip": 17678,
+      "name": "HIP 17678",
+      "aliases": [],
+      "mag": 3.26,
+      "ra": 56.809755,
+      "dec": -74.238962,
+      "ly": 214.154,
+      "spect": "M2III"
+    },
+    {
+      "hip": 3092,
+      "name": "HIP 3092",
+      "aliases": [],
+      "mag": 3.27,
+      "ra": 9.831982,
+      "dec": 30.861024,
+      "ly": 101.322,
+      "spect": "K3III..."
+    },
+    {
+      "hip": 84970,
+      "name": "HIP 84970",
+      "aliases": [],
+      "mag": 3.27,
+      "ra": 260.50241,
+      "dec": -24.999545,
+      "ly": 563.31,
+      "spect": "B2IV"
+    },
+    {
+      "hip": 113136,
+      "name": "Skat",
+      "aliases": [],
+      "mag": 3.27,
+      "ra": 343.662552,
+      "dec": -15.82082,
+      "ly": 159.568,
+      "spect": "A3V"
+    },
+    {
+      "hip": 24305,
+      "name": "HIP 24305",
+      "aliases": [],
+      "mag": 3.29,
+      "ra": 78.23292,
+      "dec": -16.205468,
+      "ly": 184.373,
+      "spect": "B9IV: HgMn"
+    },
+    {
+      "hip": 50099,
+      "name": "HIP 50099",
+      "aliases": [],
+      "mag": 3.29,
+      "ra": 153.434241,
+      "dec": -70.037903,
+      "ly": 370.212,
+      "spect": "B8III"
+    },
+    {
+      "hip": 75458,
+      "name": "Edasich",
+      "aliases": [],
+      "mag": 3.29,
+      "ra": 231.232395,
+      "dec": 58.966066,
+      "ly": 102.179,
+      "spect": "K2III"
+    },
+    {
+      "hip": 21281,
+      "name": "HIP 21281",
+      "aliases": [],
+      "mag": 3.3,
+      "ra": 68.499073,
+      "dec": -55.044975,
+      "ly": 175.731,
+      "spect": "A0V:"
+    },
+    {
+      "hip": 51576,
+      "name": "HIP 51576",
+      "aliases": [],
+      "mag": 3.3,
+      "ra": 158.006097,
+      "dec": -61.685333,
+      "ly": 497.19,
+      "spect": "B4Vne"
+    },
+    {
+      "hip": 29655,
+      "name": "Propus",
+      "aliases": [],
+      "mag": 3.31,
+      "ra": 93.719405,
+      "dec": 22.506799,
+      "ly": 349.204,
+      "spect": "M3III"
+    },
+    {
+      "hip": 85267,
+      "name": "HIP 85267",
+      "aliases": [],
+      "mag": 3.31,
+      "ra": 261.348579,
+      "dec": -56.377727,
+      "ly": 1136.433,
+      "spect": "B1Ib"
+    },
+    {
+      "hip": 5165,
+      "name": "HIP 5165",
+      "aliases": [],
+      "mag": 3.32,
+      "ra": 16.521028,
+      "dec": -46.718414,
+      "ly": 198.151,
+      "spect": "G8IIIvar"
+    },
+    {
+      "hip": 14354,
+      "name": "HIP 14354",
+      "aliases": [],
+      "mag": 3.32,
+      "ra": 46.294139,
+      "dec": 38.840274,
+      "ly": 325.181,
+      "spect": "M3IIIvar"
+    },
+    {
+      "hip": 59774,
+      "name": "Megrez",
+      "aliases": [],
+      "mag": 3.32,
+      "ra": 183.856501,
+      "dec": 57.032617,
+      "ly": 81.437,
+      "spect": "A3Vvar"
+    },
+    {
+      "hip": 84143,
+      "name": "HIP 84143",
+      "aliases": [],
+      "mag": 3.32,
+      "ra": 258.038306,
+      "dec": -43.239189,
+      "ly": 71.588,
+      "spect": "F3p"
+    },
+    {
+      "hip": 88048,
+      "name": "HIP 88048",
+      "aliases": [],
+      "mag": 3.32,
+      "ra": 269.756631,
+      "dec": -9.773632,
+      "ly": 152.766,
+      "spect": "K0III"
+    },
+    {
+      "hip": 93864,
+      "name": "HIP 93864",
+      "aliases": [],
+      "mag": 3.32,
+      "ra": 286.735037,
+      "dec": -27.670423,
+      "ly": 120.397,
+      "spect": "K1/K2III"
+    },
+    {
+      "hip": 19780,
+      "name": "HIP 19780",
+      "aliases": [],
+      "mag": 3.33,
+      "ra": 63.606182,
+      "dec": -62.473858,
+      "ly": 163.241,
+      "spect": "G7III"
+    },
+    {
+      "hip": 54879,
+      "name": "Chertan",
+      "aliases": [],
+      "mag": 3.33,
+      "ra": 168.560022,
+      "dec": 15.42957,
+      "ly": 177.645,
+      "spect": "A2V"
+    },
+    {
+      "hip": 38170,
+      "name": "Azmidi",
+      "aliases": [],
+      "mag": 3.34,
+      "ra": 117.323563,
+      "dec": -24.859786,
+      "ly": 1347.754,
+      "spect": "G6Ia"
+    },
+    {
+      "hip": 8886,
+      "name": "Segin",
+      "aliases": [],
+      "mag": 3.35,
+      "ra": 28.598856,
+      "dec": 63.670102,
+      "ly": 441.946,
+      "spect": "B2pvar"
+    },
+    {
+      "hip": 25281,
+      "name": "HIP 25281",
+      "aliases": [],
+      "mag": 3.35,
+      "ra": 81.119236,
+      "dec": -2.397146,
+      "ly": 900.984,
+      "spect": "B1V + B2"
+    },
+    {
+      "hip": 32362,
+      "name": "Alzirr",
+      "aliases": [],
+      "mag": 3.35,
+      "ra": 101.322353,
+      "dec": 12.895591,
+      "ly": 57.2,
+      "spect": "F5IV"
+    },
+    {
+      "hip": 41704,
+      "name": "Muscida",
+      "aliases": [],
+      "mag": 3.35,
+      "ra": 127.566125,
+      "dec": 60.718169,
+      "ly": 183.647,
+      "spect": "G4II-III"
+    },
+    {
+      "hip": 95501,
+      "name": "HIP 95501",
+      "aliases": [],
+      "mag": 3.36,
+      "ra": 291.374585,
+      "dec": 3.114775,
+      "ly": 50.139,
+      "spect": "F0IV"
+    },
+    {
+      "hip": 75264,
+      "name": "HIP 75264",
+      "aliases": [],
+      "mag": 3.37,
+      "ra": 230.670295,
+      "dec": -44.689622,
+      "ly": 504.106,
+      "spect": "B2IV-V"
+    },
+    {
+      "hip": 43109,
+      "name": "Ashlesha",
+      "aliases": [],
+      "mag": 3.38,
+      "ra": 131.693794,
+      "dec": 6.418809,
+      "ly": 135.166,
+      "spect": "G0III-IV"
+    },
+    {
+      "hip": 66249,
+      "name": "Heze",
+      "aliases": [],
+      "mag": 3.38,
+      "ra": 203.6733,
+      "dec": -0.59582,
+      "ly": 73.211,
+      "spect": "A3V"
+    },
+    {
+      "hip": 26207,
+      "name": "Meissa",
+      "aliases": [],
+      "mag": 3.39,
+      "ra": 83.784488,
+      "dec": 9.934158,
+      "ly": 1055.522,
+      "spect": "O..."
+    },
+    {
+      "hip": 50371,
+      "name": "HIP 50371",
+      "aliases": [],
+      "mag": 3.39,
+      "ra": 154.270732,
+      "dec": -61.332304,
+      "ly": 736.245,
+      "spect": "K3II"
+    },
+    {
+      "hip": 63090,
+      "name": "Minelauva",
+      "aliases": [],
+      "mag": 3.39,
+      "ra": 193.900866,
+      "dec": 3.39747,
+      "ly": 202.456,
+      "spect": "M3III"
+    },
+    {
+      "hip": 109492,
+      "name": "HIP 109492",
+      "aliases": [],
+      "mag": 3.39,
+      "ra": 332.713653,
+      "dec": 58.201261,
+      "ly": 726.406,
+      "spect": "K1Ibv SB"
+    },
+    {
+      "hip": 20894,
+      "name": "Chamukuy",
+      "aliases": [],
+      "mag": 3.4,
+      "ra": 67.165587,
+      "dec": 15.870883,
+      "ly": 148.998,
+      "spect": "A7III"
+    },
+    {
+      "hip": 6867,
+      "name": "HIP 6867",
+      "aliases": [],
+      "mag": 3.41,
+      "ra": 22.091363,
+      "dec": -43.318234,
+      "ly": 233.972,
+      "spect": "K5II-III"
+    },
+    {
+      "hip": 18724,
+      "name": "HIP 18724",
+      "aliases": [],
+      "mag": 3.41,
+      "ra": 60.170066,
+      "dec": 12.490347,
+      "ly": 370.212,
+      "spect": "B3V + A"
+    },
+    {
+      "hip": 67464,
+      "name": "HIP 67464",
+      "aliases": [],
+      "mag": 3.41,
+      "ra": 207.376155,
+      "dec": -41.687709,
+      "ly": 474.755,
+      "spect": "B2IV"
+    },
+    {
+      "hip": 74395,
+      "name": "HIP 74395",
+      "aliases": [],
+      "mag": 3.41,
+      "ra": 228.071229,
+      "dec": -52.099247,
+      "ly": 116.235,
+      "spect": "G8III"
+    },
+    {
+      "hip": 102422,
+      "name": "HIP 102422",
+      "aliases": [],
+      "mag": 3.41,
+      "ra": 311.322396,
+      "dec": 61.838782,
+      "ly": 46.774,
+      "spect": "K0IV"
+    },
+    {
+      "hip": 112029,
+      "name": "Homam",
+      "aliases": [],
+      "mag": 3.41,
+      "ra": 340.365503,
+      "dec": 10.831364,
+      "ly": 208.54,
+      "spect": "B8.5V"
+    },
+    {
+      "hip": 8796,
+      "name": "Mothallah",
+      "aliases": [],
+      "mag": 3.42,
+      "ra": 28.27045,
+      "dec": 29.578829,
+      "ly": 64.116,
+      "spect": "F6IV"
+    },
+    {
+      "hip": 78384,
+      "name": "HIP 78384",
+      "aliases": [],
+      "mag": 3.42,
+      "ra": 240.030534,
+      "dec": -38.396707,
+      "ly": 493.429,
+      "spect": "B2.5IV"
+    },
+    {
+      "hip": 86974,
+      "name": "HIP 86974",
+      "aliases": [],
+      "mag": 3.42,
+      "ra": 266.614695,
+      "dec": 27.720676,
+      "ly": 27.397,
+      "spect": "G5IV"
+    },
+    {
+      "hip": 102395,
+      "name": "HIP 102395",
+      "aliases": [],
+      "mag": 3.42,
+      "ra": 311.23956,
+      "dec": -66.203213,
+      "ly": 137.561,
+      "spect": "A5IV"
+    },
+    {
+      "hip": 45080,
+      "name": "HIP 45080",
+      "aliases": [],
+      "mag": 3.43,
+      "ra": 137.742022,
+      "dec": -58.966896,
+      "ly": 418.686,
+      "spect": "B2IV"
+    },
+    {
+      "hip": 50335,
+      "name": "Adhafera",
+      "aliases": [],
+      "mag": 3.43,
+      "ra": 154.172571,
+      "dec": 23.417311,
+      "ly": 259.679,
+      "spect": "F0III"
+    },
+    {
+      "hip": 93805,
+      "name": "HIP 93805",
+      "aliases": [],
+      "mag": 3.43,
+      "ra": 286.562243,
+      "dec": -4.882554,
+      "ly": 125.204,
+      "spect": "B9Vn"
+    },
+    {
+      "hip": 50372,
+      "name": "Tania Borealis",
+      "aliases": [],
+      "mag": 3.45,
+      "ra": 154.274131,
+      "dec": 42.914365,
+      "ly": 134.387,
+      "spect": "A2IV"
+    },
+    {
+      "hip": 3821,
+      "name": "Achird",
+      "aliases": [],
+      "mag": 3.46,
+      "ra": 12.276213,
+      "dec": 57.815187,
+      "ly": 19.415,
+      "spect": "G0V SB"
+    },
+    {
+      "hip": 5364,
+      "name": "HIP 5364",
+      "aliases": [],
+      "mag": 3.46,
+      "ra": 17.147465,
+      "dec": -10.182264,
+      "ly": 117.619,
+      "spect": "K2III"
+    },
+    {
+      "hip": 38827,
+      "name": "HIP 38827",
+      "aliases": [],
+      "mag": 3.46,
+      "ra": 119.194643,
+      "dec": -52.98236,
+      "ly": 386.9,
+      "spect": "B3IVp"
+    },
+    {
+      "hip": 74666,
+      "name": "HIP 74666",
+      "aliases": [],
+      "mag": 3.46,
+      "ra": 228.875679,
+      "dec": 33.314833,
+      "ly": 116.735,
+      "spect": "G8III"
+    },
+    {
+      "hip": 12706,
+      "name": "Kaffaljidhma",
+      "aliases": [],
+      "mag": 3.47,
+      "ra": 40.825162,
+      "dec": 3.235819,
+      "ly": 81.99,
+      "spect": "A3V"
+    },
+    {
+      "hip": 67472,
+      "name": "HIP 67472",
+      "aliases": [],
+      "mag": 3.47,
+      "ra": 207.404121,
+      "dec": -42.473732,
+      "ly": 526.909,
+      "spect": "B2IV-Ve"
+    },
+    {
+      "hip": 49583,
+      "name": "HIP 49583",
+      "aliases": [],
+      "mag": 3.48,
+      "ra": 151.833135,
+      "dec": 16.762664,
+      "ly": 2131.741,
+      "spect": "A0Ib"
+    },
+    {
+      "hip": 81833,
+      "name": "HIP 81833",
+      "aliases": [],
+      "mag": 3.48,
+      "ra": 250.724022,
+      "dec": 38.922254,
+      "ly": 112.043,
+      "spect": "G8III-IV"
+    },
+    {
+      "hip": 8102,
+      "name": "HIP 8102",
+      "aliases": [],
+      "mag": 3.49,
+      "ra": 26.017012,
+      "dec": -15.93748,
+      "ly": 11.896,
+      "spect": "G8V"
+    },
+    {
+      "hip": 33856,
+      "name": "Nganurganity",
+      "aliases": [],
+      "mag": 3.49,
+      "ra": 105.429782,
+      "dec": -27.93483,
+      "ly": 1217.001,
+      "spect": "K4III"
+    },
+    {
+      "hip": 55219,
+      "name": "Alula Borealis",
+      "aliases": [],
+      "mag": 3.49,
+      "ra": 169.619737,
+      "dec": 33.094306,
+      "ly": 421.391,
+      "spect": "K3III SB"
+    },
+    {
+      "hip": 73555,
+      "name": "Nekkar",
+      "aliases": [],
+      "mag": 3.49,
+      "ra": 225.48651,
+      "dec": 40.390566,
+      "ly": 218.75,
+      "spect": "G8III"
+    },
+    {
+      "hip": 90422,
+      "name": "HIP 90422",
+      "aliases": [],
+      "mag": 3.49,
+      "ra": 276.743401,
+      "dec": -45.968459,
+      "ly": 249.355,
+      "spect": "B3IV"
+    },
+    {
+      "hip": 112623,
+      "name": "HIP 112623",
+      "aliases": [],
+      "mag": 3.49,
+      "ra": 342.138743,
+      "dec": -51.316864,
+      "ly": 129.633,
+      "spect": "A3V"
+    },
+    {
+      "hip": 32759,
+      "name": "HIP 32759",
+      "aliases": [],
+      "mag": 3.5,
+      "ra": 102.460246,
+      "dec": -32.508478,
+      "ly": 789.725,
+      "spect": "B1.5IVne"
+    },
+    {
+      "hip": 35550,
+      "name": "Wasat",
+      "aliases": [],
+      "mag": 3.5,
+      "ra": 110.03074,
+      "dec": 21.982321,
+      "ly": 58.82,
+      "spect": "F0IV..."
+    },
+    {
+      "hip": 112724,
+      "name": "HIP 112724",
+      "aliases": [],
+      "mag": 3.5,
+      "ra": 342.420069,
+      "dec": 66.200408,
+      "ly": 115.372,
+      "spect": "K0III"
+    },
+    {
+      "hip": 98337,
+      "name": "HIP 98337",
+      "aliases": [],
+      "mag": 3.51,
+      "ra": 299.689281,
+      "dec": 19.492148,
+      "ly": 274.081,
+      "spect": "K5III"
+    },
+    {
+      "hip": 112748,
+      "name": "Sadalbari",
+      "aliases": [],
+      "mag": 3.51,
+      "ra": 342.500803,
+      "dec": 24.601579,
+      "ly": 116.693,
+      "spect": "M2III"
+    },
+    {
+      "hip": 17378,
+      "name": "Rana",
+      "aliases": [],
+      "mag": 3.52,
+      "ra": 55.812091,
+      "dec": -9.763395,
+      "ly": 29.495,
+      "spect": "K0IV"
+    },
+    {
+      "hip": 47508,
+      "name": "Subra",
+      "aliases": [],
+      "mag": 3.52,
+      "ra": 145.287637,
+      "dec": 9.892308,
+      "ly": 135.222,
+      "spect": "A5V+..."
+    },
+    {
+      "hip": 48774,
+      "name": "HIP 48774",
+      "aliases": [],
+      "mag": 3.52,
+      "ra": 149.21559,
+      "dec": -54.56779,
+      "ly": 1929.919,
+      "spect": "B5Ib"
+    },
+    {
+      "hip": 92420,
+      "name": "Sheliak",
+      "aliases": [],
+      "mag": 3.52,
+      "ra": 282.519978,
+      "dec": 33.362667,
+      "ly": 881.504,
+      "spect": "A8:V comp SB"
+    },
+    {
+      "hip": 93085,
+      "name": "HIP 93085",
+      "aliases": [],
+      "mag": 3.52,
+      "ra": 284.432507,
+      "dec": -21.106654,
+      "ly": 372.325,
+      "spect": "G8/K0II/III"
+    },
+    {
+      "hip": 109427,
+      "name": "Biham",
+      "aliases": [],
+      "mag": 3.52,
+      "ra": 332.549938,
+      "dec": 6.197865,
+      "ly": 96.582,
+      "spect": "A2V"
+    },
+    {
+      "hip": 20889,
+      "name": "Ain",
+      "aliases": [],
+      "mag": 3.53,
+      "ra": 67.154165,
+      "dec": 19.180432,
+      "ly": 155.017,
+      "spect": "K0III"
+    },
+    {
+      "hip": 40526,
+      "name": "Tarf",
+      "aliases": [],
+      "mag": 3.53,
+      "ra": 124.128836,
+      "dec": 9.185545,
+      "ly": 290.433,
+      "spect": "K4III"
+    },
+    {
+      "hip": 56343,
+      "name": "HIP 56343",
+      "aliases": [],
+      "mag": 3.54,
+      "ra": 173.250481,
+      "dec": -31.857625,
+      "ly": 129.273,
+      "spect": "G8III"
+    },
+    {
+      "hip": 77516,
+      "name": "HIP 77516",
+      "aliases": [],
+      "mag": 3.54,
+      "ra": 237.405035,
+      "dec": -3.430208,
+      "ly": 155.758,
+      "spect": "A0V"
+    },
+    {
+      "hip": 86263,
+      "name": "HIP 86263",
+      "aliases": [],
+      "mag": 3.54,
+      "ra": 264.396673,
+      "dec": -15.398557,
+      "ly": 105.45,
+      "spect": "F0IIIp"
+    },
+    {
+      "hip": 20042,
+      "name": "HIP 20042",
+      "aliases": [],
+      "mag": 3.55,
+      "ra": 64.473593,
+      "dec": -33.798348,
+      "ly": 178.52,
+      "spect": "B9V"
+    },
+    {
+      "hip": 27288,
+      "name": "HIP 27288",
+      "aliases": [],
+      "mag": 3.55,
+      "ra": 86.73892,
+      "dec": -14.82195,
+      "ly": 70.186,
+      "spect": "A2Vann"
+    },
+    {
+      "hip": 69996,
+      "name": "HIP 69996",
+      "aliases": [],
+      "mag": 3.55,
+      "ra": 214.850925,
+      "dec": -46.058093,
+      "ly": 351.841,
+      "spect": "B2.5IV"
+    },
+    {
+      "hip": 89937,
+      "name": "HIP 89937",
+      "aliases": [],
+      "mag": 3.55,
+      "ra": 275.264094,
+      "dec": 72.732843,
+      "ly": 26.28,
+      "spect": "F7Vvar"
+    },
+    {
+      "hip": 99240,
+      "name": "HIP 99240",
+      "aliases": [],
+      "mag": 3.55,
+      "ra": 302.181702,
+      "dec": -66.182068,
+      "ly": 19.92,
+      "spect": "G5IV-Vvar"
+    },
+    {
+      "hip": 1562,
+      "name": "HIP 1562",
+      "aliases": [],
+      "mag": 3.56,
+      "ra": 4.856977,
+      "dec": -8.823921,
+      "ly": 289.659,
+      "spect": "K2III"
+    },
+    {
+      "hip": 10602,
+      "name": "HIP 10602",
+      "aliases": [],
+      "mag": 3.56,
+      "ra": 34.127439,
+      "dec": -51.512165,
+      "ly": 154.87,
+      "spect": "B8IV-V"
+    },
+    {
+      "hip": 55282,
+      "name": "HIP 55282",
+      "aliases": [],
+      "mag": 3.56,
+      "ra": 169.835198,
+      "dec": -14.778541,
+      "ly": 194.72,
+      "spect": "K0III"
+    },
+    {
+      "hip": 82545,
+      "name": "Pipirima",
+      "aliases": [],
+      "mag": 3.56,
+      "ra": 253.083933,
+      "dec": -38.017536,
+      "ly": 516.888,
+      "spect": "B2IV"
+    },
+    {
+      "hip": 37740,
+      "name": "HIP 37740",
+      "aliases": [],
+      "mag": 3.57,
+      "ra": 116.111892,
+      "dec": 24.397993,
+      "ly": 143.492,
+      "spect": "G8III"
+    },
+    {
+      "hip": 44471,
+      "name": "Alkaphrah",
+      "aliases": [],
+      "mag": 3.57,
+      "ra": 135.906361,
+      "dec": 47.156525,
+      "ly": 423.03,
+      "spect": "A1Vn"
+    },
+    {
+      "hip": 71053,
+      "name": "HIP 71053",
+      "aliases": [],
+      "mag": 3.57,
+      "ra": 217.957458,
+      "dec": 30.371437,
+      "ly": 148.794,
+      "spect": "K3III"
+    },
+    {
+      "hip": 75177,
+      "name": "HIP 75177",
+      "aliases": [],
+      "mag": 3.57,
+      "ra": 230.451542,
+      "dec": -36.261376,
+      "ly": 326.483,
+      "spect": "K5III"
+    },
+    {
+      "hip": 35350,
+      "name": "HIP 35350",
+      "aliases": [],
+      "mag": 3.58,
+      "ra": 109.523245,
+      "dec": 16.540383,
+      "ly": 94.292,
+      "spect": "A3V..."
+    },
+    {
+      "hip": 100064,
+      "name": "Algedi",
+      "aliases": [],
+      "mag": 3.58,
+      "ra": 304.513564,
+      "dec": -12.544852,
+      "ly": 108.683,
+      "spect": "G6/G8III"
+    },
+    {
+      "hip": 7607,
+      "name": "Nembus",
+      "aliases": [],
+      "mag": 3.59,
+      "ra": 24.49815,
+      "dec": 48.628213,
+      "ly": 173.857,
+      "spect": "K3III"
+    },
+    {
+      "hip": 24674,
+      "name": "HIP 24674",
+      "aliases": [],
+      "mag": 3.59,
+      "ra": 79.401625,
+      "dec": -6.844409,
+      "ly": 554.688,
+      "spect": "B5III"
+    },
+    {
+      "hip": 27072,
+      "name": "HIP 27072",
+      "aliases": [],
+      "mag": 3.59,
+      "ra": 86.115793,
+      "dec": -22.448382,
+      "ly": 29.254,
+      "spect": "F7V"
+    },
+    {
+      "hip": 57757,
+      "name": "Zavijava",
+      "aliases": [],
+      "mag": 3.59,
+      "ra": 177.673827,
+      "dec": 1.764718,
+      "ly": 35.552,
+      "spect": "F8V"
+    },
+    {
+      "hip": 60260,
+      "name": "Ginan",
+      "aliases": [],
+      "mag": 3.59,
+      "ra": 185.340039,
+      "dec": -60.401147,
+      "ly": 228.081,
+      "spect": "K3/K4III"
+    },
+    {
+      "hip": 6537,
+      "name": "HIP 6537",
+      "aliases": [],
+      "mag": 3.6,
+      "ra": 21.005854,
+      "dec": -8.183257,
+      "ly": 114.521,
+      "spect": "K0III"
+    },
+    {
+      "hip": 33018,
+      "name": "HIP 33018",
+      "aliases": [],
+      "mag": 3.6,
+      "ra": 103.197243,
+      "dec": 33.961254,
+      "ly": 196.598,
+      "spect": "A3III"
+    },
+    {
+      "hip": 42536,
+      "name": "HIP 42536",
+      "aliases": [],
+      "mag": 3.6,
+      "ra": 130.073272,
+      "dec": -52.921887,
+      "ly": 494.926,
+      "spect": "B3IV"
+    },
+    {
+      "hip": 46651,
+      "name": "HIP 46651",
+      "aliases": [],
+      "mag": 3.6,
+      "ra": 142.675001,
+      "dec": -40.466769,
+      "ly": 60.523,
+      "spect": "F2IV"
+    },
+    {
+      "hip": 76470,
+      "name": "HIP 76470",
+      "aliases": [],
+      "mag": 3.6,
+      "ra": 234.256041,
+      "dec": -28.135079,
+      "ly": 194.604,
+      "spect": "K3III"
+    },
+    {
+      "hip": 85727,
+      "name": "HIP 85727",
+      "aliases": [],
+      "mag": 3.6,
+      "ra": 262.774638,
+      "dec": -60.683848,
+      "ly": 187.231,
+      "spect": "B8V"
+    },
+    {
+      "hip": 13209,
+      "name": "Bharani",
+      "aliases": [],
+      "mag": 3.61,
+      "ra": 42.495968,
+      "dec": 27.260507,
+      "ly": 159.49,
+      "spect": "B8Vn"
+    },
+    {
+      "hip": 15900,
+      "name": "HIP 15900",
+      "aliases": [],
+      "mag": 3.61,
+      "ra": 51.203307,
+      "dec": 9.02887,
+      "ly": 211.515,
+      "spect": "G8III"
+    },
+    {
+      "hip": 49841,
+      "name": "HIP 49841",
+      "aliases": [],
+      "mag": 3.61,
+      "ra": 152.646989,
+      "dec": -12.354083,
+      "ly": 114.682,
+      "spect": "K0III"
+    },
+    {
+      "hip": 63613,
+      "name": "HIP 63613",
+      "aliases": [],
+      "mag": 3.61,
+      "ra": 195.567764,
+      "dec": -71.548855,
+      "ly": 90.826,
+      "spect": "K2III"
+    },
+    {
+      "hip": 86929,
+      "name": "HIP 86929",
+      "aliases": [],
+      "mag": 3.61,
+      "ra": 266.43328,
+      "dec": -64.723872,
+      "ly": 371.054,
+      "spect": "K1III"
+    },
+    {
+      "hip": 7097,
+      "name": "Alpherg",
+      "aliases": [],
+      "mag": 3.62,
+      "ra": 22.870873,
+      "dec": 15.345823,
+      "ly": 294.1,
+      "spect": "G8III"
+    },
+    {
+      "hip": 17847,
+      "name": "Atlas",
+      "aliases": [],
+      "mag": 3.62,
+      "ra": 57.290594,
+      "dec": 24.053415,
+      "ly": 380.579,
+      "spect": "B8III"
+    },
+    {
+      "hip": 37819,
+      "name": "HIP 37819",
+      "aliases": [],
+      "mag": 3.62,
+      "ra": 116.313733,
+      "dec": -37.968584,
+      "ly": 1387.899,
+      "spect": "K4III"
+    },
+    {
+      "hip": 82729,
+      "name": "HIP 82729",
+      "aliases": [],
+      "mag": 3.62,
+      "ra": 253.645855,
+      "dec": -42.361313,
+      "ly": 150.511,
+      "spect": "K4III"
+    },
+    {
+      "hip": 113726,
+      "name": "HIP 113726",
+      "aliases": [],
+      "mag": 3.62,
+      "ra": 345.480268,
+      "dec": 42.325979,
+      "ly": 692.476,
+      "spect": "B6pv SB"
+    },
+    {
+      "hip": 57363,
+      "name": "HIP 57363",
+      "aliases": [],
+      "mag": 3.63,
+      "ra": 176.401746,
+      "dec": -66.728763,
+      "ly": 128.307,
+      "spect": "A7III"
+    },
+    {
+      "hip": 101769,
+      "name": "Rotanev",
+      "aliases": [],
+      "mag": 3.64,
+      "ra": 309.387254,
+      "dec": 14.595087,
+      "ly": 97.389,
+      "spect": "F5IV"
+    },
+    {
+      "hip": 20205,
+      "name": "Prima Hyadum",
+      "aliases": [],
+      "mag": 3.65,
+      "ra": 64.948349,
+      "dec": 15.627642,
+      "ly": 154.065,
+      "spect": "G8III"
+    },
+    {
+      "hip": 46733,
+      "name": "HIP 46733",
+      "aliases": [],
+      "mag": 3.65,
+      "ra": 142.882117,
+      "dec": 63.061861,
+      "ly": 75.499,
+      "spect": "F0IV"
+    },
+    {
+      "hip": 77233,
+      "name": "HIP 77233",
+      "aliases": [],
+      "mag": 3.65,
+      "ra": 236.546902,
+      "dec": 15.421826,
+      "ly": 153.053,
+      "spect": "A3V"
+    },
+    {
+      "hip": 88714,
+      "name": "HIP 88714",
+      "aliases": [],
+      "mag": 3.65,
+      "ra": 271.657796,
+      "dec": -50.091477,
+      "ly": 1012.908,
+      "spect": "B2Ib"
+    },
+    {
+      "hip": 110960,
+      "name": "HIP 110960",
+      "aliases": [],
+      "mag": 3.65,
+      "ra": 337.207967,
+      "dec": -0.019972,
+      "ly": 103.443,
+      "spect": "F3III-IV"
+    },
+    {
+      "hip": 75695,
+      "name": "Nusakan",
+      "aliases": [],
+      "mag": 3.66,
+      "ra": 231.957212,
+      "dec": 29.105703,
+      "ly": 114.041,
+      "spect": "F0p"
+    },
+    {
+      "hip": 76600,
+      "name": "HIP 76600",
+      "aliases": [],
+      "mag": 3.66,
+      "ra": 234.66404,
+      "dec": -29.777754,
+      "ly": 444.961,
+      "spect": "B2.5V"
+    },
+    {
+      "hip": 68756,
+      "name": "Thuban",
+      "aliases": [],
+      "mag": 3.67,
+      "ra": 211.097291,
+      "dec": 64.375851,
+      "ly": 308.86,
+      "spect": "A0III SB"
+    },
+    {
+      "hip": 103227,
+      "name": "HIP 103227",
+      "aliases": [],
+      "mag": 3.67,
+      "ra": 313.702513,
+      "dec": -58.454155,
+      "ly": 602.877,
+      "spect": "K0III"
+    },
+    {
+      "hip": 22549,
+      "name": "HIP 22549",
+      "aliases": [],
+      "mag": 3.68,
+      "ra": 72.801516,
+      "dec": 5.605104,
+      "ly": 1259.291,
+      "spect": "B2III SB"
+    },
+    {
+      "hip": 42828,
+      "name": "HIP 42828",
+      "aliases": [],
+      "mag": 3.68,
+      "ra": 130.898073,
+      "dec": -33.186386,
+      "ly": 844.965,
+      "spect": "B1.5III"
+    },
+    {
+      "hip": 97365,
+      "name": "HIP 97365",
+      "aliases": [],
+      "mag": 3.68,
+      "ra": 296.846927,
+      "dec": 18.534286,
+      "ly": 448.017,
+      "spect": "M2II + B6"
+    },
+    {
+      "hip": 114341,
+      "name": "HIP 114341",
+      "aliases": [],
+      "mag": 3.68,
+      "ra": 347.361655,
+      "dec": -21.17241,
+      "ly": 233.636,
+      "spect": "K1III"
+    },
+    {
+      "hip": 2920,
+      "name": "Fulu",
+      "aliases": [],
+      "mag": 3.69,
+      "ra": 9.242853,
+      "dec": 53.896909,
+      "ly": 597.356,
+      "spect": "B2IV"
+    },
+    {
+      "hip": 9007,
+      "name": "HIP 9007",
+      "aliases": [],
+      "mag": 3.69,
+      "ra": 28.989468,
+      "dec": -51.608896,
+      "ly": 57.03,
+      "spect": "G5IV"
+    },
+    {
+      "hip": 23453,
+      "name": "Saclateni",
+      "aliases": [],
+      "mag": 3.69,
+      "ra": 75.619529,
+      "dec": 41.075837,
+      "ly": 787.817,
+      "spect": "K4II comp"
+    },
+    {
+      "hip": 47854,
+      "name": "HIP 47854",
+      "aliases": [],
+      "mag": 3.69,
+      "ra": 146.311714,
+      "dec": -62.507903,
+      "ly": 1509.983,
+      "spect": "G5Iab/Ib"
+    },
+    {
+      "hip": 57399,
+      "name": "Taiyangshou",
+      "aliases": [],
+      "mag": 3.69,
+      "ra": 176.512558,
+      "dec": 47.779406,
+      "ly": 196.007,
+      "spect": "K0III"
+    },
+    {
+      "hip": 106985,
+      "name": "Nashira",
+      "aliases": [],
+      "mag": 3.69,
+      "ra": 325.022735,
+      "dec": -16.662308,
+      "ly": 138.908,
+      "spect": "A7III:mp..."
+    },
+    {
+      "hip": 15474,
+      "name": "HIP 15474",
+      "aliases": [],
+      "mag": 3.7,
+      "ra": 49.879175,
+      "dec": -21.757864,
+      "ly": 258.239,
+      "spect": "M3/M4III"
+    },
+    {
+      "hip": 87933,
+      "name": "HIP 87933",
+      "aliases": [],
+      "mag": 3.7,
+      "ra": 269.44119,
+      "dec": 29.24788,
+      "ly": 135.222,
+      "spect": "K0III"
+    },
+    {
+      "hip": 114971,
+      "name": "HIP 114971",
+      "aliases": [],
+      "mag": 3.7,
+      "ra": 349.291408,
+      "dec": 3.282289,
+      "ly": 130.881,
+      "spect": "G7III"
+    },
+    {
+      "hip": 22797,
+      "name": "HIP 22797",
+      "aliases": [],
+      "mag": 3.71,
+      "ra": 73.562902,
+      "dec": 2.440672,
+      "ly": 1342.207,
+      "spect": "B2III SB"
+    },
+    {
+      "hip": 28103,
+      "name": "HIP 28103",
+      "aliases": [],
+      "mag": 3.71,
+      "ra": 89.10122,
+      "dec": -14.1677,
+      "ly": 49.068,
+      "spect": "F1V"
+    },
+    {
+      "hip": 38414,
+      "name": "HIP 38414",
+      "aliases": [],
+      "mag": 3.71,
+      "ra": 118.054312,
+      "dec": -40.575786,
+      "ly": 344.774,
+      "spect": "G5III..."
+    },
+    {
+      "hip": 77622,
+      "name": "HIP 77622",
+      "aliases": [],
+      "mag": 3.71,
+      "ra": 237.704025,
+      "dec": 4.47773,
+      "ly": 70.307,
+      "spect": "A2m"
+    },
+    {
+      "hip": 88771,
+      "name": "HIP 88771",
+      "aliases": [],
+      "mag": 3.71,
+      "ra": 271.837434,
+      "dec": 9.563847,
+      "ly": 82.781,
+      "spect": "A4IVs"
+    },
+    {
+      "hip": 98036,
+      "name": "Alshain",
+      "aliases": [],
+      "mag": 3.71,
+      "ra": 298.828306,
+      "dec": 6.406763,
+      "ly": 44.71,
+      "spect": "G8IVvar"
+    },
+    {
+      "hip": 16537,
+      "name": "Ran",
+      "aliases": [],
+      "mag": 3.72,
+      "ra": 53.232684,
+      "dec": -9.458262,
+      "ly": 10.496,
+      "spect": "K2V"
+    },
+    {
+      "hip": 17499,
+      "name": "Electra",
+      "aliases": [],
+      "mag": 3.72,
+      "ra": 56.218905,
+      "dec": 24.113339,
+      "ly": 370.632,
+      "spect": "B6III"
+    },
+    {
+      "hip": 28358,
+      "name": "HIP 28358",
+      "aliases": [],
+      "mag": 3.72,
+      "ra": 89.881819,
+      "dec": 54.284656,
+      "ly": 140.464,
+      "spect": "K0III"
+    },
+    {
+      "hip": 104060,
+      "name": "HIP 104060",
+      "aliases": [],
+      "mag": 3.72,
+      "ra": 316.232762,
+      "dec": 43.927852,
+      "ly": 1177.46,
+      "spect": "K5Ibv SB"
+    },
+    {
+      "hip": 16083,
+      "name": "HIP 16083",
+      "aliases": [],
+      "mag": 3.73,
+      "ra": 51.792303,
+      "dec": 9.73268,
+      "ly": 222.177,
+      "spect": "B9Vn"
+    },
+    {
+      "hip": 72220,
+      "name": "HIP 72220",
+      "aliases": [],
+      "mag": 3.73,
+      "ra": 221.562184,
+      "dec": 1.892885,
+      "ly": 128.661,
+      "spect": "A0V"
+    },
+    {
+      "hip": 87585,
+      "name": "Grumium",
+      "aliases": [],
+      "mag": 3.73,
+      "ra": 268.382206,
+      "dec": 56.872643,
+      "ly": 111.468,
+      "spect": "K2III"
+    },
+    {
+      "hip": 107089,
+      "name": "HIP 107089",
+      "aliases": [],
+      "mag": 3.73,
+      "ra": 325.36936,
+      "dec": -77.390046,
+      "ly": 69.072,
+      "spect": "K0III"
+    },
+    {
+      "hip": 112961,
+      "name": "HIP 112961",
+      "aliases": [],
+      "mag": 3.73,
+      "ra": 343.15365,
+      "dec": -7.579599,
+      "ly": 391.544,
+      "spect": "M2IIIvar"
+    },
+    {
+      "hip": 8645,
+      "name": "Baten Kaitos",
+      "aliases": [],
+      "mag": 3.74,
+      "ra": 27.86514,
+      "dec": -10.335038,
+      "ly": 259.06,
+      "spect": "K2III"
+    },
+    {
+      "hip": 80170,
+      "name": "HIP 80170",
+      "aliases": [],
+      "mag": 3.74,
+      "ra": 245.48006,
+      "dec": 19.15313,
+      "ly": 195.42,
+      "spect": "A9III"
+    },
+    {
+      "hip": 104887,
+      "name": "HIP 104887",
+      "aliases": [],
+      "mag": 3.74,
+      "ra": 318.697882,
+      "dec": 38.045317,
+      "ly": 68.234,
+      "spect": "F1IV"
+    },
+    {
+      "hip": 44511,
+      "name": "HIP 44511",
+      "aliases": [],
+      "mag": 3.75,
+      "ra": 136.038668,
+      "dec": -47.097737,
+      "ly": 309.153,
+      "spect": "K2III"
+    },
+    {
+      "hip": 87108,
+      "name": "HIP 87108",
+      "aliases": [],
+      "mag": 3.75,
+      "ra": 266.973169,
+      "dec": 2.707276,
+      "ly": 94.758,
+      "spect": "A0V"
+    },
+    {
+      "hip": 26069,
+      "name": "HIP 26069",
+      "aliases": [],
+      "mag": 3.76,
+      "ra": 83.406324,
+      "dec": -62.489825,
+      "ly": 1038.715,
+      "spect": "F6Ia"
+    },
+    {
+      "hip": 27654,
+      "name": "HIP 27654",
+      "aliases": [],
+      "mag": 3.76,
+      "ra": 87.830399,
+      "dec": -20.879089,
+      "ly": 112.274,
+      "spect": "G8III/IV"
+    },
+    {
+      "hip": 30867,
+      "name": "HIP 30867",
+      "aliases": [],
+      "mag": 3.76,
+      "ra": 97.204458,
+      "dec": -7.033062,
+      "ly": 691.009,
+      "spect": "B3Ve"
+    },
+    {
+      "hip": 93683,
+      "name": "HIP 93683",
+      "aliases": [],
+      "mag": 3.76,
+      "ra": 286.170757,
+      "dec": -21.741496,
+      "ly": 138.849,
+      "spect": "K0III"
+    },
+    {
+      "hip": 95853,
+      "name": "HIP 95853",
+      "aliases": [],
+      "mag": 3.76,
+      "ra": 292.426496,
+      "dec": 51.729779,
+      "ly": 122.477,
+      "spect": "A5Vn"
+    },
+    {
+      "hip": 111169,
+      "name": "HIP 111169",
+      "aliases": [],
+      "mag": 3.76,
+      "ra": 337.822921,
+      "dec": 50.282491,
+      "ly": 102.372,
+      "spect": "A1V"
+    },
+    {
+      "hip": 13268,
+      "name": "Miram",
+      "aliases": [],
+      "mag": 3.77,
+      "ra": 42.674209,
+      "dec": 55.895496,
+      "ly": 1331.251,
+      "spect": "K3Ib comp SB"
+    },
+    {
+      "hip": 17529,
+      "name": "HIP 17529",
+      "aliases": [],
+      "mag": 3.77,
+      "ra": 56.298466,
+      "dec": 42.578549,
+      "ly": 556.581,
+      "spect": "F5IIvar"
+    },
+    {
+      "hip": 20455,
+      "name": "Secunda Hyadum",
+      "aliases": [],
+      "mag": 3.77,
+      "ra": 65.733722,
+      "dec": 17.542514,
+      "ly": 153.197,
+      "spect": "G8III"
+    },
+    {
+      "hip": 26549,
+      "name": "HIP 26549",
+      "aliases": [],
+      "mag": 3.77,
+      "ra": 84.686533,
+      "dec": -2.600069,
+      "ly": 1148.438,
+      "spect": "O9.5V..."
+    },
+    {
+      "hip": 41312,
+      "name": "HIP 41312",
+      "aliases": [],
+      "mag": 3.77,
+      "ra": 126.434144,
+      "dec": -66.13689,
+      "ly": 107.963,
+      "spect": "K2IIIvar"
+    },
+    {
+      "hip": 42570,
+      "name": "HIP 42570",
+      "aliases": [],
+      "mag": 3.77,
+      "ra": 130.156541,
+      "dec": -46.648744,
+      "ly": 3106.251,
+      "spect": "F3Ia"
+    },
+    {
+      "hip": 82363,
+      "name": "HIP 82363",
+      "aliases": [],
+      "mag": 3.77,
+      "ra": 252.446485,
+      "dec": -59.041378,
+      "ly": 313.311,
+      "spect": "K5III"
+    },
+    {
+      "hip": 101958,
+      "name": "Sualocin",
+      "aliases": [],
+      "mag": 3.77,
+      "ra": 309.909531,
+      "dec": 15.912072,
+      "ly": 240.706,
+      "spect": "B9V"
+    },
+    {
+      "hip": 105881,
+      "name": "HIP 105881",
+      "aliases": [],
+      "mag": 3.77,
+      "ra": 321.666775,
+      "dec": -22.411332,
+      "ly": 398.237,
+      "spect": "G4Ibp..."
+    },
+    {
+      "hip": 109176,
+      "name": "HIP 109176",
+      "aliases": [],
+      "mag": 3.77,
+      "ra": 331.752775,
+      "dec": 25.345112,
+      "ly": 38.344,
+      "spect": "F5V"
+    },
+    {
+      "hip": 34481,
+      "name": "HIP 34481",
+      "aliases": [],
+      "mag": 3.78,
+      "ra": 107.186941,
+      "dec": -70.498932,
+      "ly": 141.684,
+      "spect": "G8IIIvar"
+    },
+    {
+      "hip": 36046,
+      "name": "HIP 36046",
+      "aliases": [],
+      "mag": 3.78,
+      "ra": 111.43165,
+      "dec": 27.79808,
+      "ly": 125.929,
+      "spect": "G9III+..."
+    },
+    {
+      "hip": 48319,
+      "name": "HIP 48319",
+      "aliases": [],
+      "mag": 3.78,
+      "ra": 147.747324,
+      "dec": 59.038736,
+      "ly": 115.046,
+      "spect": "F0IV"
+    },
+    {
+      "hip": 70890,
+      "name": "Proxima Centauri",
+      "aliases": [
+        "Proxima"
+      ],
+      "mag": 11.13,
+      "ra": 217.428953,
+      "dec": -62.679484,
+      "ly": 4.246,
+      "spect": "M5.5Ve",
+      "note": "Te zwak voor de heldere selectie. Afstand 4,246 lichtjaar, de gangbare waarde."
+    }
+  ]
+}

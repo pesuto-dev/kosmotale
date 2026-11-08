@@ -1,0 +1,36 @@
+Hipparcos-sterrendata in data/stars.json
+=======================================
+
+Dit bestand is geen Apache-2.0-werk. Het valt niet onder LICENSE in de
+repositorywortel. Ontvangers krijgen dezelfde beperkingen als de verspreider.
+
+Werk
+    Selectie uit The Hipparcos and Tycho Catalogues, ESA 1997, catalogus I/239,
+    via CDS/VizieR. Alleen sterren met parallax boven 0,15 milliboogseconde.
+    Afstand in lichtjaar = (1000 / parallax in mas) × 3,261563777.
+    Toegevoegd: eigennamen en een paar aliassen (onder meer Poolster, Betelgeuze,
+    Wega, Alpha Centauri). Die namen zijn geen Hipparcos-tekst; zie NOTICE voor
+    de IAU-bron. Er is geen CC-versienummer op die namen geclaimd.
+
+Licentie
+    Creative Commons Attribution-NonCommercial 3.0 IGO
+    https://creativecommons.org/licenses/by-nc/3.0/igo/legalcode
+
+Credit
+    Credit: ESA
+    Titel: The Hipparcos and Tycho Catalogues (ESA 1997)
+
+Voorwaarden voor iedereen die dit bestand ontvangt
+    - Alleen verspreiden onder deze licentie, met deze tekst of de URI hierboven.
+    - Niet primair voor commercieel voordeel of privé geld. Een gratis hobbykopie
+      mag. Geld verdienen met deze sterdata, ook indirect, mag niet zonder
+      voorafgaande toestemming van ESA (data.licences@esa.int), naast de NC-akte.
+    - Geen extra voorwaarden die de rechten onder deze licentie inkorten, en geen
+      Apache-2.0-label op dit bestand.
+    - Geen endorsement door ESA suggereren.
+    - Bewerkingen melden. Deze selectie, de lichtjaaromrekening en de toegevoegde
+      namen zijn zulke bewerkingen.
+
+ESA-archiefvoorwaarden
+    https://www.cosmos.esa.int/web/esdc/terms-and-conditions
+    https://www.cosmos.esa.int/web/hipparcos/catalogues

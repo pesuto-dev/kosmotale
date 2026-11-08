@@ -1,0 +1,466 @@
+{
+  "source": "Afstanden en groottes zijn afgeronde, gangbare waarden uit de vakliteratuur (onder meer ESA/Gaia voor nabije stelsels, GRAVITY-samenwerking voor Sagittarius A*, en de gebruikelijke ΛCDM-straal van het waarneembare heelal van 46,5 miljard lichtjaar). Het zijn geen live metingen. Waar het beeld een model is, staat dat op het label.",
+  "objects": [
+    {
+      "id": "planetoidengordel",
+      "name": "Planetoïdengordel",
+      "aliases": [
+        "asteroïdengordel",
+        "asteroidengordel"
+      ],
+      "evidence": "waargenomen",
+      "realms": [
+        "zonnestelsel"
+      ],
+      "kind": "gordel",
+      "summary": "Echte gordel tussen Mars en Jupiter. De stippen zijn een schets, geen gemeten rotsen stuk voor stuk.",
+      "place": "ring",
+      "au": 2.7,
+      "au_min": 2.15,
+      "au_max": 3.3,
+      "color": "#9a907f",
+      "size_note": "ruwweg 2,2–3,3 AE van de zon"
+    },
+    {
+      "id": "kuipergordel",
+      "name": "Kuipergordel",
+      "aliases": [
+        "Kuiper"
+      ],
+      "evidence": "waargenomen",
+      "realms": [
+        "zonnestelsel"
+      ],
+      "kind": "gordel",
+      "summary": "IJzige lichamen buiten Neptunus, Pluto inbegrepen. De stippen zijn een schets van de gordel.",
+      "place": "ring",
+      "au": 40,
+      "au_min": 32,
+      "au_max": 48,
+      "color": "#8ea4b8",
+      "size_note": "ruwweg 30–50 AE van de zon"
+    },
+    {
+      "id": "oortwolk",
+      "name": "Oortwolk",
+      "aliases": [
+        "Oort"
+      ],
+      "evidence": "model",
+      "realms": [
+        "zonnestelsel",
+        "buitengebied"
+      ],
+      "kind": "gordel",
+      "summary": "Veronderstelde wolk van kometen. Nooit direct gezien. De schil is een model, ruwweg tweeduizend tot honderdduizend AE.",
+      "place": "shell",
+      "au_min": 2000,
+      "au_max": 100000,
+      "color": "#9eb6d6",
+      "size_note": "model, ruwweg 2.000–100.000 AE"
+    },
+    {
+      "id": "melkweg",
+      "name": "Melkweg",
+      "aliases": [
+        "Milky Way"
+      ],
+      "evidence": "waargenomen",
+      "realms": [
+        "melkweg",
+        "lokale-groep"
+      ],
+      "kind": "stelsel",
+      "summary": "Ons sterrenstelsel. Je zit erin. De schijf in dit beeld is een eenvoudig model van een vorm die we wel echt zien.",
+      "place": "galaxy-disk",
+      "ra": 266.4168,
+      "dec": -29.0078,
+      "ly": 26670,
+      "radius_ly": 50000,
+      "color": "#f2e2c4",
+      "size_note": "stellaire schijf ongeveer 100.000 lichtjaar breed"
+    },
+    {
+      "id": "sagittarius-a",
+      "name": "Sagittarius A*",
+      "aliases": [
+        "Sgr A*",
+        "Sagittarius A"
+      ],
+      "evidence": "waargenomen",
+      "realms": [
+        "melkweg"
+      ],
+      "kind": "zwart-gat",
+      "summary": "Het zwarte gat in het centrum. Sterren eromheen en de schaduw zijn waargenomen. De bol hier is een markering: de horizon is ongeveer 12,7 miljoen km in straal.",
+      "place": "sky",
+      "ra": 266.4168,
+      "dec": -29.0078,
+      "ly": 26670,
+      "radius_m": 12700000000.0,
+      "color": "#ffb15a",
+      "marker": true
+    },
+    {
+      "id": "sagittarius-a-binnenste",
+      "name": "Binnenste van Sagittarius A*",
+      "aliases": [
+        "singulariteit"
+      ],
+      "evidence": "model",
+      "realms": [
+        "melkweg"
+      ],
+      "kind": "structuur",
+      "summary": "Onder de waarnemingshorizon. Niemand heeft daar beeld van. Het kernbolletje is een model, geen meting.",
+      "place": "sky",
+      "ra": 266.4168,
+      "dec": -29.0078,
+      "ly": 26670,
+      "radius_m": null,
+      "color": "#d9b6ff",
+      "size_note": "niet gemeten; binnen een horizon van ongeveer 12,7 miljoen km straal",
+      "marker": true
+    },
+    {
+      "id": "donkere-materie",
+      "name": "Donkere-materiehalo",
+      "aliases": [
+        "donkere materie"
+      ],
+      "evidence": "model",
+      "realms": [
+        "melkweg"
+      ],
+      "kind": "structuur",
+      "summary": "Halo die in de modellen de Melkweg bij elkaar houdt. Niet direct gezien. Straal hier ongeveer 200 kiloparsec.",
+      "place": "shell-at",
+      "ra": 266.4168,
+      "dec": -29.0078,
+      "ly": 26670,
+      "radius_ly": 652000,
+      "color": "#7d6cff",
+      "size_note": "modelhalo, straal ongeveer 650.000 lichtjaar"
+    },
+    {
+      "id": "grote-magelhaense-wolk",
+      "name": "Grote Magelhaense Wolk",
+      "aliases": [
+        "LMC"
+      ],
+      "evidence": "waargenomen",
+      "realms": [
+        "lokale-groep",
+        "melkweg"
+      ],
+      "kind": "stelsel",
+      "summary": "Buurstelsel aan de zuidelijke hemel, met het blote oog te zien vanaf donkere plekken op aarde.",
+      "place": "sky",
+      "ra": 80.894,
+      "dec": -69.756,
+      "ly": 163000,
+      "radius_ly": 7000,
+      "color": "#f0d0c0"
+    },
+    {
+      "id": "kleine-magelhaense-wolk",
+      "name": "Kleine Magelhaense Wolk",
+      "aliases": [
+        "SMC"
+      ],
+      "evidence": "waargenomen",
+      "realms": [
+        "lokale-groep",
+        "melkweg"
+      ],
+      "kind": "stelsel",
+      "summary": "De kleinere Magelhaense wolk, iets verder dan de grote.",
+      "place": "sky",
+      "ra": 13.187,
+      "dec": -72.828,
+      "ly": 200000,
+      "radius_ly": 3500,
+      "color": "#f6ddd4"
+    },
+    {
+      "id": "andromeda",
+      "name": "Andromeda",
+      "aliases": [
+        "M31",
+        "Andromedanevel"
+      ],
+      "evidence": "waargenomen",
+      "realms": [
+        "lokale-groep"
+      ],
+      "kind": "stelsel",
+      "summary": "Dichtstbijzijnde groot sterrenstelsel. Op een donkere hemel een vage vlek, op weg naar ons toe.",
+      "place": "sky",
+      "ra": 10.6847,
+      "dec": 41.2688,
+      "ly": 2540000,
+      "radius_ly": 110000,
+      "color": "#d9d4ff"
+    },
+    {
+      "id": "driehoeknevel",
+      "name": "Driehoeknevel",
+      "aliases": [
+        "M33",
+        "Triangulum"
+      ],
+      "evidence": "waargenomen",
+      "realms": [
+        "lokale-groep"
+      ],
+      "kind": "stelsel",
+      "summary": "Derde grote lid van de Lokale Groep, kleiner dan Andromeda en de Melkweg.",
+      "place": "sky",
+      "ra": 23.462,
+      "dec": 30.66,
+      "ly": 2730000,
+      "radius_ly": 30000,
+      "color": "#cfc8f2"
+    },
+    {
+      "id": "virgo",
+      "name": "Virgocluster",
+      "aliases": [
+        "Virgo",
+        "Maagdcluster"
+      ],
+      "evidence": "waargenomen",
+      "realms": [
+        "supercluster"
+      ],
+      "kind": "cluster",
+      "summary": "De dichtstbijzijnde grote cluster, rond M87. Afstand ongeveer 54 miljoen lichtjaar.",
+      "place": "sky",
+      "ra": 187.706,
+      "dec": 12.391,
+      "ly": 54000000,
+      "radius_ly": 6500000,
+      "color": "#f0e6c8"
+    },
+    {
+      "id": "fornax",
+      "name": "Fornaxcluster",
+      "aliases": [
+        "Fornax"
+      ],
+      "evidence": "waargenomen",
+      "realms": [
+        "supercluster"
+      ],
+      "kind": "cluster",
+      "summary": "Cluster aan de zuidelijke hemel, iets verder dan Virgo. Afstand hier afgerond op 62 miljoen lichtjaar.",
+      "place": "sky",
+      "ra": 54.6,
+      "dec": -35.45,
+      "ly": 62000000,
+      "radius_ly": 4000000,
+      "color": "#e7dcc0"
+    },
+    {
+      "id": "centaurus",
+      "name": "Centauruscluster",
+      "aliases": [
+        "Centaurus"
+      ],
+      "evidence": "waargenomen",
+      "realms": [
+        "supercluster"
+      ],
+      "kind": "cluster",
+      "summary": "Cluster in de richting van de Grote Aantrekker. Afstand afgerond op 170 miljoen lichtjaar.",
+      "place": "sky",
+      "ra": 192.2,
+      "dec": -41.3,
+      "ly": 170000000,
+      "radius_ly": 5000000,
+      "color": "#e6d5b0"
+    },
+    {
+      "id": "perseus",
+      "name": "Perseuscluster",
+      "aliases": [
+        "Perseus"
+      ],
+      "evidence": "waargenomen",
+      "realms": [
+        "supercluster"
+      ],
+      "kind": "cluster",
+      "summary": "Massieve cluster. Afstand afgerond op 240 miljoen lichtjaar.",
+      "place": "sky",
+      "ra": 49.95,
+      "dec": 41.51,
+      "ly": 240000000,
+      "radius_ly": 6000000,
+      "color": "#ead8b4"
+    },
+    {
+      "id": "coma",
+      "name": "Comacluster",
+      "aliases": [
+        "Coma"
+      ],
+      "evidence": "waargenomen",
+      "realms": [
+        "supercluster"
+      ],
+      "kind": "cluster",
+      "summary": "Rijke cluster in het sterrenbeeld Hoofdhaar. Afstand afgerond op 320 miljoen lichtjaar.",
+      "place": "sky",
+      "ra": 194.95,
+      "dec": 27.98,
+      "ly": 320000000,
+      "radius_ly": 10000000,
+      "color": "#f3e2c0"
+    },
+    {
+      "id": "grote-aantrekker",
+      "name": "Grote Aantrekker",
+      "aliases": [
+        "Great Attractor"
+      ],
+      "evidence": "model",
+      "realms": [
+        "supercluster"
+      ],
+      "kind": "structuur",
+      "summary": "Plek waar sterrenstelsels in de buurt naartoe stromen. Het centrum is afgeleid, niet een scherpe foto. Richting en afstand zijn grof.",
+      "place": "sky",
+      "ra": 240.0,
+      "dec": -52.0,
+      "ly": 220000000,
+      "radius_ly": 15000000,
+      "color": "#e8b0c8",
+      "marker": true,
+      "size_note": "geen scherpe rand; orde 200 miljoen lichtjaar ver"
+    },
+    {
+      "id": "laniakea",
+      "name": "Grens van Laniakea",
+      "aliases": [
+        "Laniakea"
+      ],
+      "evidence": "model",
+      "realms": [
+        "supercluster",
+        "heelal"
+      ],
+      "kind": "structuur",
+      "summary": "Supercluster waarvan de grens een model is: het gebied dat samen naar de Grote Aantrekker stroomt. De Melkweg zit aan de rand. Doorsnee ongeveer 520 miljoen lichtjaar.",
+      "place": "shell-at",
+      "ra": 240.0,
+      "dec": -52.0,
+      "ly": 220000000,
+      "radius_ly": 260000000,
+      "color": "#f0c27a",
+      "size_note": "modelgrens, doorsnee ongeveer 520 miljoen lichtjaar"
+    },
+    {
+      "id": "kosmisch-web",
+      "name": "Kosmisch web",
+      "aliases": [
+        "filamenten"
+      ],
+      "evidence": "model",
+      "realms": [
+        "supercluster",
+        "heelal"
+      ],
+      "kind": "structuur",
+      "summary": "Slierten van sterrenstelsels en gas. De draden hier verbinden een paar echte clusters. Het is een schets, geen kaart van elke sliert.",
+      "place": "web",
+      "color": "#b9c7ff",
+      "size_note": "geen enkele grootte; het web vult het heelal op deze schaal"
+    },
+    {
+      "id": "donkere-energie",
+      "name": "Donkere energie",
+      "aliases": [],
+      "evidence": "model",
+      "realms": [
+        "heelal"
+      ],
+      "kind": "structuur",
+      "summary": "Geen plek. Een model voor de versnelde uitdijing, overal in de lege ruimte. De waas is alleen een manier om dat te tonen.",
+      "place": "field",
+      "ly": 30000000000,
+      "color": "#c4b0ff",
+      "size_note": "geen plek en geen rand"
+    },
+    {
+      "id": "cmb",
+      "name": "Kosmische achtergrondstraling",
+      "aliases": [
+        "CMB",
+        "achtergrondstraling"
+      ],
+      "evidence": "waargenomen",
+      "realms": [
+        "heelal"
+      ],
+      "kind": "structuur",
+      "summary": "De oudste straling die we meten, als een schil om ons heen. De gloed is waargenomen. De afstand van 46,5 miljard lichtjaar komt uit het kosmologische model.",
+      "place": "shell",
+      "ly": 46500000000,
+      "color": "#e8d2b0",
+      "size_note": "schil op 46,5 miljard lichtjaar"
+    },
+    {
+      "id": "rand",
+      "name": "Rand van het waarneembare heelal",
+      "aliases": [
+        "waarneembare heelal",
+        "particle horizon"
+      ],
+      "evidence": "model",
+      "realms": [
+        "heelal"
+      ],
+      "kind": "structuur",
+      "summary": "Hoe ver licht ons sinds de oerknal heeft kunnen bereiken, in het gebruikelijke model. Geen muur. Dezelfde schil als de achtergrondstraling, als grens gelabeld.",
+      "place": "shell",
+      "ly": 46500000000,
+      "color": "#f4e7cf",
+      "size_note": "modelstraal 46,5 miljard lichtjaar"
+    }
+  ],
+  "filaments": [
+    [
+      "andromeda",
+      "virgo"
+    ],
+    [
+      "virgo",
+      "centaurus"
+    ],
+    [
+      "virgo",
+      "coma"
+    ],
+    [
+      "virgo",
+      "perseus"
+    ],
+    [
+      "fornax",
+      "virgo"
+    ],
+    [
+      "centaurus",
+      "grote-aantrekker"
+    ],
+    [
+      "coma",
+      "grote-aantrekker"
+    ],
+    [
+      "perseus",
+      "coma"
+    ]
+  ]
+}
