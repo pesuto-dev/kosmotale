@@ -42,6 +42,29 @@ The export has no subpath by default. `NEXT_PUBLIC_BASE_PATH` is empty until the
 - Click an object, or pick it from the list, to fly there. That also turns free flight off
 - Sources: the button in the header
 
+## Recording the demo
+
+Record this on a laptop with a real GPU. A headless VM draws the Earth and then goes grey, so the script opens headed Chromium and does not pass SwiftShader flags.
+
+Prerequisites: Node.js 20 or newer, Chromium for Playwright (`npx playwright install chromium`, once), and ffmpeg on `PATH` (`winget install Gyan.FFmpeg`, `brew install ffmpeg`, or `sudo apt install ffmpeg`).
+
+```bash
+npm run record-demo
+```
+
+With no `--url`, the script starts `next dev` on port 43127, or reuses that port if a server is already listening. `--prod` runs `next build` and serves the static `out/` folder with Node. This app is `output: "export"`, so `next start` does not serve it.
+
+- `--url http://127.0.0.1:43127` — record a server that is already running
+- `--duration 15` — length of the camera path in seconds (default 15, allowed 8–60)
+- `--lang nl` — the UI strings are Dutch only. Another value is reported and the recording stays Dutch
+- `--prod` — record the production export instead of the dev server
+
+The page cursor is hidden (`cursor: none`). The video is 1280×800; the headed window renders at `deviceScaleFactor` 2. Playwright does not capture the OS cursor.
+
+Files in `demo-output/` (gitignored): `kosmotale-demo.mp4` (H.264, yuv420p, faststart, no audio, about 1–3 MB), `kosmotale-demo.webm` (VP9, no audio), and `kosmotale-demo.png` (a poster from the opening Earth shot). If ffmpeg is missing, the script prints the commands and leaves the raw take in `demo-output/raw/`.
+
+The path is fixed. It holds on Earth, drags to orbit, scrolls to zoom out toward the stars, then searches for Sirius and opens its info card. There is no constellation picker; Sirius is the star in the shot.
+
 ## Sources
 
 - Planet orbits: E.M. Standish, Keplerian elements, JPL. Diameters: NASA Planetary Fact Sheet.
