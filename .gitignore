@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# Local demo recordings from `npm run record-demo`
+/demo-output/
+
 # production
 /build
 
