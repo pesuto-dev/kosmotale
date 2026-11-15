@@ -33,12 +33,13 @@ The export has no subpath by default. `NEXT_PUBLIC_BASE_PATH` is empty until the
 
 ## Controls
 
-- Drag with the mouse to look around
-- WASD to fly, Q and E to go up and down
+- By default the camera stays on the selected world: drag to orbit it, scroll to zoom, WASD to turn and dolly, Q and E to tilt
+- Bovenaanzicht looks down on that orbit (planets, moons and Pluto). Drag still orbits, scroll still zooms
+- Los navigeren switches to free flight: drag to look, WASD to fly, Q and E to go up and down. The scroll wheel then changes flight speed. Shift holds ×10 for a moment
 - Flight and clock have two separate speed controls, each with a button back to 1×
-- 1× flight is 1 km/s. Higher is a multiple. Shift holds ×10 for a moment. The scroll wheel changes flight speed
+- 1× flight is 1 km/s. Higher is a multiple
 - 1× on the clock is real time
-- Click an object, or pick it from the list, to fly there
+- Click an object, or pick it from the list, to fly there. That also turns free flight off
 - Sources: the button in the header
 
 ## Sources

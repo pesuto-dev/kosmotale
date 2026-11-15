@@ -28,12 +28,15 @@ import { scaleBar } from "@/lib/scale";
 import { speedPhrase } from "@/lib/motion";
 import { sunDistanceM, trueMeters } from "@/lib/positions";
 import {
+  canTopDown,
   emitUi,
   getUiSnap,
   selectObject,
   setClockFactor,
   setFlightFactor,
+  setFreeNav,
   setSimTime,
+  setTopDown,
   sim,
   subscribeUi,
 } from "@/lib/sim";
@@ -315,6 +318,28 @@ export function Hud() {
               {option.label}
             </Button>
           ))}
+          <Button
+            type="button"
+            size="sm"
+            variant={ui.freeNav ? "default" : "secondary"}
+            className="ml-auto"
+            aria-pressed={ui.freeNav}
+            title="Aan: zelf rondvliegen. Uit: zoomen en draaien om de gekozen wereld."
+            onClick={() => setFreeNav(!ui.freeNav)}
+          >
+            Los navigeren
+          </Button>
+          <Button
+            type="button"
+            size="sm"
+            variant={ui.topDown ? "default" : "secondary"}
+            aria-pressed={ui.topDown}
+            disabled={!ui.topDown && !canTopDown(ui.selectedId)}
+            title="Kijk van boven op de baan. Slepen draait eromheen, het wiel zoomt."
+            onClick={() => setTopDown(!ui.topDown)}
+          >
+            Bovenaanzicht
+          </Button>
         </div>
         <div className="mt-3 px-1">
           <Label htmlFor="tijd" className="mb-1 block text-[11px] text-[#c9c0b2]">
@@ -341,18 +366,19 @@ export function Hud() {
           achtergrondstraling blijven op nu.
         </p>
         <p className="mt-1 hidden text-[11px] text-[#b7ae9f] sm:block">
-          Slepen: kijken. WASD: vliegen. Q/E: omhoog en omlaag. Shift: vlucht even ×10. Scrollwiel:
-          vliegsnelheid. Klik: ernaartoe. Spatie: klok.
+          {ui.freeNav
+            ? "Los navigeren staat aan. Slepen: kijken. WASD: vliegen. Q/E: omhoog en omlaag. Shift: vlucht even ×10. Scrollwiel: vliegsnelheid. Klik: ernaartoe, en dan weer vast aan die wereld. Spatie: klok."
+            : "Vast aan de gekozen wereld: slepen draait eromheen, scrollwiel zoomt in en uit. WASD zoomt en draait, Q/E kantelt. Ook in bovenaanzicht, om de baan. Zet Los navigeren aan om zelf te vliegen. Klik: ernaartoe. Spatie: klok."}
         </p>
         <div className="mt-2 grid grid-cols-3 gap-1 sm:hidden">
           <span />
-          <HoldButton label="Vooruit" code="forward" />
+          <HoldButton label={ui.freeNav ? "Vooruit" : "Dichterbij"} code="forward" />
           <span />
-          <HoldButton label="Links" code="left" />
-          <HoldButton label="Omhoog" code="up" />
-          <HoldButton label="Rechts" code="right" />
-          <HoldButton label="Achteruit" code="back" />
-          <HoldButton label="Omlaag" code="down" />
+          <HoldButton label={ui.freeNav ? "Links" : "Linksom"} code="left" />
+          <HoldButton label={ui.freeNav ? "Omhoog" : "Hoger"} code="up" />
+          <HoldButton label={ui.freeNav ? "Rechts" : "Rechtsom"} code="right" />
+          <HoldButton label={ui.freeNav ? "Achteruit" : "Verder"} code="back" />
+          <HoldButton label={ui.freeNav ? "Omlaag" : "Lager"} code="down" />
           <HoldButton label="Snel" code="boost" />
         </div>
       </footer>

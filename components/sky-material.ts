@@ -23,9 +23,13 @@ float hash(vec3 p) {
 void main() {
   vec3 d = normalize(vDir);
   vec2 ang = vec2(atan(d.y, d.x), asin(clamp(d.z, -1.0, 1.0)));
-  vec2 cell = floor(ang * vec2(48.0, 24.0));
+  vec2 scaled = ang * vec2(96.0, 48.0);
+  vec2 cell = floor(scaled);
+  vec2 f = fract(scaled);
   float h = hash(vec3(cell, 1.0));
-  float star = smoothstep(0.965, 0.992, h);
+  // Alleen het midden van de cel. De hele cel vullen maakt van elke stip een blok.
+  float blob = smoothstep(0.42, 0.05, length(f - 0.5));
+  float star = step(0.972, h) * blob;
   float tint = hash(vec3(cell, 2.0));
   vec3 col = vec3(0.012, 0.016, 0.034);
   col += star * mix(vec3(0.62, 0.7, 0.9), vec3(1.0, 0.84, 0.68), tint) * (0.35 + 0.65 * hash(vec3(cell, 3.0)));
