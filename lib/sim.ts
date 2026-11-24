@@ -1,3 +1,4 @@
+import { getObject } from "@/lib/catalog";
 import { INITIAL_JD } from "@/lib/constants";
 
 export const sim = {
@@ -11,6 +12,13 @@ export const sim = {
   hoverId: null as string | null,
   flyNonce: 1,
   suppressClick: false,
+  /** Bovenaanzicht: camera boven de ecliptica, baan van de selectie als cirkel in beeld. */
+  topDown: false,
+  /**
+   * Uit: slepen en scrollen draaien en zoomen om de selectie.
+   * Aan: zelf vliegen, kijken en de vliegsnelheid met het wiel zetten.
+   */
+  freeNav: false,
   keys: {
     forward: false,
     back: false,
@@ -28,6 +36,8 @@ export type UiSnap = {
   clockFactor: number;
   flightFactor: number;
   selectedId: string | null;
+  topDown: boolean;
+  freeNav: boolean;
   version: number;
 };
 
@@ -42,6 +52,8 @@ function take(): UiSnap {
     clockFactor: sim.clockFactor,
     flightFactor: sim.flightFactor,
     selectedId: sim.selectedId,
+    topDown: sim.topDown,
+    freeNav: sim.freeNav,
     version,
   };
 }
@@ -63,7 +75,33 @@ export function emitUi() {
 
 export function selectObject(id: string, fly = true) {
   sim.selectedId = id;
+  // Focussen zet de camera weer vast aan die wereld. Zelf vliegen is een aparte stand.
+  sim.freeNav = false;
+  // Buiten planeet, maan en dwergplaneet is er geen leesbare baan om van boven te tonen.
+  if (sim.topDown && !canTopDown(id)) sim.topDown = false;
   if (fly) sim.flyNonce += 1;
+  emitUi();
+}
+
+/** Alleen een planeet, maan of dwergplaneet heeft een baan die als cirkel in beeld past. */
+export function canTopDown(id: string | null) {
+  if (!id) return false;
+  const kind = getObject(id)?.kind;
+  return kind === "planeet" || kind === "maan" || kind === "dwergplaneet";
+}
+
+export function setTopDown(on: boolean) {
+  const next = on && canTopDown(sim.selectedId);
+  if (next === sim.topDown) return;
+  sim.topDown = next;
+  if (next) sim.freeNav = false;
+  emitUi();
+}
+
+export function setFreeNav(on: boolean) {
+  if (sim.freeNav === on) return;
+  sim.freeNav = on;
+  if (on) sim.topDown = false;
   emitUi();
 }
 

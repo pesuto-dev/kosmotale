@@ -1,6 +1,7 @@
 import cosmosJson from "@/data/cosmos.json";
 import orbitalJson from "@/data/orbital-elements.json";
 import starsJson from "@/data/stars.json";
+import { enCatalog } from "@/lib/en-catalog";
 import { SATURN_RINGS_KM, SATURN_RING_ID } from "@/lib/rings";
 import type { Kind, Realm, SpaceObject } from "@/lib/types";
 import type { OsculatingOrbit, SecularOrbit } from "@/lib/kepler";
@@ -72,7 +73,9 @@ function objectBase(
   partial: Omit<SpaceObject, "search"> & { aliases?: string[] },
 ): SpaceObject {
   const aliases = partial.aliases ?? [];
-  const search = [partial.name, ...aliases, partial.summary, partial.kind]
+  const en = enCatalog[partial.id];
+  const search = [partial.name, en?.name, ...aliases, partial.summary, en?.summary, partial.kind]
+    .filter((part): part is string => Boolean(part))
     .join(" ")
     .toLocaleLowerCase("nl");
   return { ...partial, aliases, search };

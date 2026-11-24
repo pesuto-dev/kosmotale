@@ -7,3 +7,11 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+<!-- demotale:agent-guide -->
+## Recording a demo
+
+This project records demo videos of itself with demotale. When you are asked for a demo, a
+recording or a screencast of anything here, run `npx demotale agent-guide` first and follow
+what it prints. It is one page, it is written for you rather than for a person, and it is part
+of the installed version, so it cannot be out of date. Do not write a scenario from memory.

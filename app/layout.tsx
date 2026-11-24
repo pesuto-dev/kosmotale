@@ -6,8 +6,8 @@ const noindex = process.env.NEXT_PUBLIC_NOINDEX === "1";
 
 export const metadata: Metadata = {
   title: "kosmotale",
-  description: "Van de aarde tot de rand van het waarneembare heelal. De sterdata zijn niet-commercieel.",
-  // Temporary: drop this once the pesuto.dev case study is live and links here.
+  description: "From Earth to the edge of the observable universe. The star data are non-commercial.",
+  // Temporary noindex for the /kosmotale/ deploy (NEXT_PUBLIC_NOINDEX=1).
   ...(noindex
     ? { robots: { index: false, follow: false } }
     : {}),
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="nl" className="dark h-full antialiased">
+    <html lang="en" className="dark h-full antialiased">
       <body className="min-h-full bg-[#03040c] text-[#f3eadc]">{children}</body>
     </html>
   );

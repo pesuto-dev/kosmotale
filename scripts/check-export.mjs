@@ -3,7 +3,7 @@ import { join } from "node:path";
 
 const base = (process.env.NEXT_PUBLIC_BASE_PATH ?? "").replace(/\/$/, "");
 const out = "out";
-const required = ["LICENSE", "NOTICE", "LICENSES/hipparcos.txt"];
+const required = ["LICENSE", "NOTICE", "LICENSES/hipparcos.txt", "LICENSES/sterrenkaart.txt"];
 const uri = "https://creativecommons.org/licenses/by-nc/3.0/igo/legalcode";
 
 function fail(message) {
@@ -32,14 +32,30 @@ for (const needle of [
 }
 
 const notice = readFileSync(join(out, "NOTICE"), "utf8");
-for (const needle of ["VTAD", "edition 3", "IAU", "USGS", "CC BY-NC 3.0 IGO"]) {
+for (const needle of ["VTAD", "edition 3", "IAU", "USGS", "CC BY-NC 3.0 IGO", "SVS 4851", "Gaia DR2", "sterren.jpg"]) {
   if (!notice.includes(needle)) fail(`NOTICE mist: ${needle}`);
 }
+
+const sky = readFileSync(join(out, "LICENSES/sterrenkaart.txt"), "utf8");
+for (const needle of [
+  uri,
+  "SVS 4851",
+  "starmap_2020_4k.exr",
+  "NASA/Goddard Space Flight Center Scientific Visualization Studio",
+  "Gaia DR2: ESA/Gaia/DPAC",
+  "Credit: ESA",
+  "4096",
+  "sterrenbeeldfiguren",
+]) {
+  if (!sky.includes(needle)) fail(`sterrenkaart.txt mist: ${needle}`);
+}
+
+const skyImage = join(out, "textures/sterren.jpg");
+if (!existsSync(skyImage)) fail(`export mist ${skyImage}`);
 
 function walk(dir, acc = []) {
   for (const name of readdirSync(dir)) {
     const path = join(dir, name);
-    if (name === "sterren.jpg") fail(`verboden bestand in export: ${path}`);
     const st = statSync(path);
     if (st.isDirectory()) walk(path, acc);
     else if (/\.(html|js|txt)$/.test(name)) acc.push(path);

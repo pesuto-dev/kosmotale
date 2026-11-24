@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
+import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { stars } from "@/lib/catalog";
 import { visualOf } from "@/lib/positions";
 import { selectObject, sim } from "@/lib/sim";
 import { softPointsMaterial } from "@/components/point-material";
+import { starDim } from "@/components/sky-backdrop";
 
 export function Starfield() {
   const geom = useMemo(() => {
@@ -34,10 +36,16 @@ export function Starfield() {
     () => softPointsMaterial({ size: 90, maxPx: 4.5, opacity: 0.95, vertexColors: true, perPointMax: true, core: 0.25 }),
     [],
   );
+  const ref = useRef<THREE.Points>(null);
   useEffect(() => () => mat.dispose(), [mat]);
+  useFrame(() => {
+    const m = ref.current?.material as THREE.ShaderMaterial | undefined;
+    if (m) m.uniforms.uOpacity.value = 0.95 * starDim.value;
+  });
 
   return (
     <points
+      ref={ref}
       geometry={geom}
       onClick={(event) => {
         event.stopPropagation();

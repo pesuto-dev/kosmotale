@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Line } from "@react-three/drei";
 import * as THREE from "three";
-import { moons, planets, pluto, sun } from "@/lib/catalog";
+import { moonById, moons, planets, pluto, sun } from "@/lib/catalog";
 import { AU_KM, AU_M } from "@/lib/constants";
 import { SATURN_RING_ID, SATURN_RINGS_KM } from "@/lib/rings";
 import { FLATTENING, lockedFrame, poleOf, spinFrame, type BodyFrame } from "@/lib/rotation";
@@ -21,7 +21,7 @@ import { Belts, Dust, Oort } from "@/components/dust-field";
 import { CosmosMeshes } from "@/components/cosmos-meshes";
 import { radialTexture } from "@/components/radial-texture";
 import { orbitVisual, visualOf } from "@/lib/positions";
-import { selectObject, sim } from "@/lib/sim";
+import { canTopDown, getUiSnap, selectObject, sim, subscribeUi } from "@/lib/sim";
 
 const AU = AU_M;
 
@@ -88,6 +88,9 @@ const ORBIT_IDS = [
 function Orbits() {
   const [stamp, setStamp] = useState(() => sim.jd);
   const epochRef = useRef(Math.floor(sim.jd / 30));
+  // In bovenaanzicht licht de baan van de selectie op; dit volgt alleen UI-events, niet elk frame.
+  const ui = useSyncExternalStore(subscribeUi, getUiSnap, getUiSnap);
+  const highlight = ui.topDown ? ui.selectedId : null;
   useFrame(() => {
     const next = Math.floor(sim.jd / 30);
     if (next !== epochRef.current) {
@@ -97,27 +100,63 @@ function Orbits() {
   });
   const lines = useMemo(
     () =>
-      ORBIT_IDS.map((id) => ({
-        id,
-        points: orbitVisual(id, stamp).map((p) => [p.x, p.y, p.z] as [number, number, number]),
-      })),
+      ORBIT_IDS.map((id) => {
+        const pts = orbitVisual(id, stamp);
+        // Een maanbaan hoort om de planeet van nú, niet die van de epoche: binnen de
+        // lineaire zone is de warp lineair, dus de baan mag relatief aan de planeet.
+        const parent = moonById.get(id)?.parent ?? null;
+        const c = parent ? visualOf(parent, stamp) : { x: 0, y: 0, z: 0 };
+        return {
+          id,
+          parent,
+          points: pts.map((p) => [p.x - c.x, p.y - c.y, p.z - c.z] as [number, number, number]),
+        };
+      }),
     [stamp],
   );
   return (
     <>
-      {lines.map((line) => (
-        <Line
-          key={line.id}
-          points={line.points}
-          color={line.id === "maan" || moons.some((m) => m.id === line.id) ? "#d9d3c5" : "#f0d7a2"}
-          transparent
-          opacity={moons.some((m) => m.id === line.id) ? 0.22 : 0.28}
-          lineWidth={1}
-        />
-      ))}
+      {lines.map((line) => {
+        const isMoon = line.parent != null;
+        const lit = line.id === highlight;
+        const orbit = (
+          <Line
+            points={line.points}
+            color={lit ? "#fff1c8" : isMoon ? "#d9d3c5" : "#f0d7a2"}
+            transparent
+            opacity={lit ? 0.9 : isMoon ? 0.22 : 0.28}
+            lineWidth={lit ? 2 : 1}
+          />
+        );
+        return line.parent ? (
+          <AtBody key={line.id} id={line.parent}>
+            {orbit}
+          </AtBody>
+        ) : (
+          <group key={line.id}>{orbit}</group>
+        );
+      })}
     </>
   );
 }
+
+/** Groep die elk frame op de visuele plek van een wereld staat. */
+function AtBody({ id, children }: { id: string; children: ReactNode }) {
+  const ref = useRef<THREE.Group>(null);
+  useFrame(() => {
+    const p = visualOf(id, sim.jd);
+    ref.current?.position.set(p.x, p.y, p.z);
+  });
+  return <group ref={ref}>{children}</group>;
+}
+
+/** Witte zachte schijf; de spritekleur maakt er de catalogkleur van het gevolgde lichaam van. */
+const followDot = () =>
+  radialTexture([
+    [0, "rgba(255,255,255,1)"],
+    [0.45, "rgba(255,255,255,0.9)"],
+    [1, "rgba(255,255,255,0)"],
+  ]);
 
 const sunHalo = () =>
   radialTexture([
@@ -135,19 +174,24 @@ function Body({
   radiusM,
   parent,
   ring,
+  dot,
 }: {
   id: string;
   color: string;
   radiusM: number;
   parent?: string;
   ring?: boolean;
+  /** Schijfje dat in bovenaanzicht op de selectie ligt; de zon heeft al zijn eigen halo. */
+  dot?: THREE.Texture;
 }) {
   const group = useRef<THREE.Group>(null);
   const hit = useRef<THREE.Mesh>(null);
   const spin = useRef<THREE.Mesh>(null);
+  const dotRef = useRef<THREE.Sprite>(null);
   const radiusAu = radiusM / AU;
   const flattening = FLATTENING[id] ?? 0;
   const isSun = id === "zon";
+  const hasDot = dot != null && !isSun && canTopDown(id);
   const material = useMemo(() => {
     if (isSun) return sunMaterial();
     const look = lookFor(id, color);
@@ -178,6 +222,7 @@ function Body({
     const dist = state.camera.position.distanceTo(hit.current?.position ?? new THREE.Vector3());
     const hitR = Math.min(Math.max(radiusAu * 4, dist * 0.014), Math.max(radiusAu * 8, dist * 0.06));
     hit.current?.scale.setScalar(Math.max(hitR, radiusAu * 1.4));
+    if (dotRef.current) dotRef.current.visible = sim.topDown && sim.selectedId === id;
     if (!spin.current) return;
     const own = spinFrame(id, sim.jd);
     if (own) {
@@ -197,6 +242,21 @@ function Body({
           <sphereGeometry args={[Math.max(radiusAu, 1e-6), big ? 72 : 40, big ? 48 : 28]} />
         </mesh>
         {ring ? <SaturnRings planetAu={radiusAu} flattening={flattening} /> : null}
+        {hasDot ? (
+          // Vaste schermgrootte, boven de bol getekend: de ware bol is van boven af vaak kleiner dan een pixel.
+          <sprite ref={dotRef} visible={false} scale={[0.012, 0.012, 1]} renderOrder={10} raycast={noRaycast}>
+            <spriteMaterial
+              map={dot}
+              color={color}
+              sizeAttenuation={false}
+              transparent
+              opacity={0.9}
+              depthTest={false}
+              depthWrite={false}
+              blending={THREE.AdditiveBlending}
+            />
+          </sprite>
+        ) : null}
         {halo ? (
           <>
             <sprite scale={[radiusAu * 10, radiusAu * 10, 1]} raycast={noRaycast}>
@@ -251,6 +311,8 @@ function SaturnRings({ planetAu, flattening }: { planetAu: number; flattening: n
 }
 
 export function UniverseScene() {
+  const dot = useMemo(() => followDot(), []);
+  useEffect(() => () => dot.dispose(), [dot]);
   return (
     <>
       <color attach="background" args={["#03040c"]} />
@@ -269,11 +331,12 @@ export function UniverseScene() {
           color={p.color}
           radiusM={p.radius_km * 1000}
           ring={p.id === "saturnus"}
+          dot={dot}
         />
       ))}
-      <Body id="pluto" color={pluto.color} radiusM={pluto.radius_km * 1000} />
+      <Body id="pluto" color={pluto.color} radiusM={pluto.radius_km * 1000} dot={dot} />
       {moons.map((m) => (
-        <Body key={m.id} id={m.id} color={m.color} radiusM={m.radius_km * 1000} parent={m.parent} />
+        <Body key={m.id} id={m.id} color={m.color} radiusM={m.radius_km * 1000} parent={m.parent} dot={dot} />
       ))}
     </>
   );

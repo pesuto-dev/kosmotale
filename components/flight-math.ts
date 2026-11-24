@@ -2,10 +2,11 @@
 
 import * as THREE from "three";
 import { getObject } from "@/lib/catalog";
-import { AU_M, LY_M } from "@/lib/constants";
+import { AU_M, DEG, LY_M, VIEW_FOV_DEG } from "@/lib/constants";
 import { toVisualRadius } from "@/lib/coords";
 import { unwarpVisual, warpMeters } from "@/lib/coords";
 import { visualBodyRadius, visualOf } from "@/lib/positions";
+import { SATURN_RINGS_KM } from "@/lib/rings";
 import type { Vec } from "@/lib/types";
 
 export const _forward = new THREE.Vector3();
@@ -44,7 +45,29 @@ export type Flight = {
   dur: number;
 };
 
-export function approach(id: string, from: THREE.Vector3, jd: number) {
+/** De bol vult dit deel van de kleinste beeldas, zodat hij rond leest en er nog rand overblijft. */
+const BODY_FILL = 0.7;
+
+export function viewHalfAngle(aspect: number) {
+  const halfV = (VIEW_FOV_DEG / 2) * DEG;
+  const safe = Number.isFinite(aspect) && aspect > 0.2 ? aspect : 1.6;
+  const halfH = Math.atan(Math.tan(halfV) * safe);
+  return Math.min(halfV, halfH);
+}
+
+/** Afstand waarop `radius` de kleinste beeldas voor BODY_FILL vult. */
+export function framedBodyDistance(radius: number, aspect: number) {
+  return Math.max(radius, 1e-6) / Math.tan(viewHalfAngle(aspect) * BODY_FILL);
+}
+
+/** Bij Saturnus telt de buitenrand van de ringen, anders staat de camera erin. */
+export function focusSpan(id: string, jd: number) {
+  const body = visualBodyRadius(id, jd);
+  if (id !== "saturnus") return body;
+  return Math.max(body, (SATURN_RINGS_KM.aOuter * 1000) / AU_M);
+}
+
+export function approach(id: string, from: THREE.Vector3, jd: number, aspect: number) {
   const obj = getObject(id);
   const target = toV3(visualOf(id, jd));
   const look = target.clone();
@@ -92,11 +115,14 @@ export function approach(id: string, from: THREE.Vector3, jd: number) {
   if (away.lengthSq() < 1e-10) away.set(0.4, -0.3, 0.2);
   away.normalize();
   const bodyR = visualBodyRadius(id, jd);
-  let stop = Math.max(bodyR * 7, 0.00018);
-  if (obj.kind === "maan") stop = Math.max(bodyR * 14, 3e-6);
+  const round =
+    obj.kind === "zon" ||
+    obj.kind === "planeet" ||
+    obj.kind === "maan" ||
+    obj.kind === "dwergplaneet";
+  let stop = round ? framedBodyDistance(focusSpan(id, jd), aspect) : Math.max(bodyR * 7, 0.00018);
   if (obj.kind === "ringen") stop = Math.max(bodyR * 3.4, 0.0022);
   if (obj.kind === "ster") stop = 0.55;
-  if (obj.kind === "zon") stop = Math.max(bodyR * 10, 0.04);
   if (obj.kind === "stelsel" || obj.kind === "cluster") stop = Math.max(bodyR * 3.2, 4);
   if (obj.kind === "structuur" || obj.kind === "zwart-gat") stop = Math.max(bodyR * 4, 2.2);
   if (obj.kind === "gordel") stop = Math.max(8, bodyR);

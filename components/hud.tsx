@@ -2,6 +2,7 @@
 
 import { useMemo, useState, useSyncExternalStore } from "react";
 import { CreditsButton } from "@/components/credits-panel";
+import { DateControl } from "@/components/date-control";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,39 +14,53 @@ import {
   CLOCK_PRESETS,
   FLIGHT_PRESETS,
   INITIAL_JD,
-  KIND_LABEL,
   MAX_YEAR,
   MIN_YEAR,
-  REALM_LABEL,
-  formatDutchDate,
   jdToYearFloat,
   yearFloatToJd,
 } from "@/lib/constants";
 import { HoldButton, distanceMeters } from "@/components/hud-controls";
 import { getFrameSnap, subscribeFrame } from "@/lib/frame";
-import { formatClock, formatDistance, formatFlight, formatMag, formatSize, formatSpeed } from "@/lib/format";
+import {
+  formatClock,
+  formatClockPreset,
+  formatDistance,
+  formatFactor,
+  formatFlight,
+  formatMag,
+  formatSize,
+  formatSpeed,
+} from "@/lib/format";
+import { getLang, setLang, subscribeLang, type Lang } from "@/lib/lang";
+import { copy } from "@/lib/messages";
+import { kindLabel, objectName, objectSizeNote, objectSummary, realmLabel } from "@/lib/present";
 import { scaleBar } from "@/lib/scale";
 import { speedPhrase } from "@/lib/motion";
 import { sunDistanceM, trueMeters } from "@/lib/positions";
 import {
+  canTopDown,
   emitUi,
   getUiSnap,
   selectObject,
   setClockFactor,
   setFlightFactor,
+  setFreeNav,
   setSimTime,
+  setTopDown,
   sim,
   subscribeUi,
 } from "@/lib/sim";
 
 export function Hud() {
+  const lang = useSyncExternalStore(subscribeLang, getLang, () => "en" as const);
+  const m = copy(lang);
   const ui = useSyncExternalStore(subscribeUi, getUiSnap, getUiSnap);
   const frame = useSyncExternalStore(subscribeFrame, getFrameSnap, getFrameSnap);
   const [query, setQuery] = useState("");
   const [listOpen, setListOpen] = useState(false);
   const selected = ui.selectedId ? getObject(ui.selectedId) : undefined;
   const realm = frame.realm;
-  const q = query.trim().toLocaleLowerCase("nl");
+  const q = query.trim().toLocaleLowerCase(lang);
 
   const rows = useMemo(() => {
     const source = q
@@ -53,9 +68,9 @@ export function Hud() {
       : objects.filter((o) => o.realms.includes(realm));
     return source
       .slice()
-      .sort((a, b) => a.name.localeCompare(b.name, "nl"))
+      .sort((a, b) => objectName(a, lang).localeCompare(objectName(b, lang), lang))
       .slice(0, q ? 80 : 120);
-  }, [q, realm]);
+  }, [q, realm, lang]);
 
   const bar = scaleBar(frame.scaleDepthM, frame.viewW, frame.viewH);
   const year = jdToYearFloat(ui.jd);
@@ -76,20 +91,42 @@ export function Hud() {
           <h1 className="font-display text-2xl tracking-tight text-[#f6efe2] sm:text-3xl">
             kosmotale
           </h1>
-          <p className="text-xs text-[#d9d0c0] sm:text-sm">
-            Van de aarde tot de rand van wat we kunnen zien.
-          </p>
-          <CreditsButton />
+          <p className="text-xs text-[#d9d0c0] sm:text-sm">{m.tagline}</p>
+          <div className="mt-2 flex items-center gap-2">
+            <CreditsButton />
+            <div className="flex rounded-lg border border-white/15 p-0.5" role="group" aria-label={m.langLabel}>
+              <Button
+                type="button"
+                size="sm"
+                variant={lang === "en" ? "default" : "ghost"}
+                className="h-7 px-2"
+                aria-pressed={lang === "en"}
+                onClick={() => chooseLang("en")}
+              >
+                {m.langEn}
+              </Button>
+              <Button
+                type="button"
+                size="sm"
+                variant={lang === "nl" ? "default" : "ghost"}
+                className="h-7 px-2 text-[#f3eadc]"
+                aria-pressed={lang === "nl"}
+                onClick={() => chooseLang("nl")}
+              >
+                {m.langNl}
+              </Button>
+            </div>
+          </div>
         </div>
         <div className="pointer-events-auto w-full sm:max-w-sm">
           <Label htmlFor="zoek" className="sr-only">
-            Zoek een object
+            {m.searchLabel}
           </Label>
           <Input
             id="zoek"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Zoek een ster, planeet, stelsel…"
+            placeholder={m.searchPlaceholder}
             className="border-white/15 bg-black/50 text-[#f6efe2] placeholder:text-[#b7ae9f]"
           />
         </div>
@@ -103,14 +140,14 @@ export function Hud() {
         >
           <div className="mb-2 flex items-baseline justify-between gap-2 px-1">
             <h2 className="text-sm font-medium text-[#f6efe2]">
-              {q ? "Zoeken in het hele heelal" : REALM_LABEL[realm]}
+              {q ? m.searchAll : realmLabel(realm, lang)}
             </h2>
             <span className="text-[11px] text-[#c9c0b2]">{rows.length}</span>
           </div>
           <ScrollArea className="min-h-0 flex-1">
             {rows.length === 0 ? (
               <p className="px-2 py-6 text-sm text-[#d9d0c2]">
-                Niets gevonden voor „{query.trim()}”.
+                {m.searchEmpty(query.trim())}
               </p>
             ) : (
               <ul className="space-y-1 pr-2">
@@ -133,10 +170,10 @@ export function Hud() {
                               row.evidence === "model" ? "bg-[#c4b0ff]" : "bg-[#f0d7a2]"
                             }`}
                           />
-                          <span className="truncate">{row.name}</span>
+                          <span className="truncate">{objectName(row, lang)}</span>
                         </span>
                         <span className="mt-0.5 block truncate pl-3.5 text-[11px] text-[#c9c0b2]">
-                          {row.evidence === "model" ? "Model" : "Waargenomen"}
+                          {row.evidence === "model" ? m.model : m.observed}
                           {" · "}
                           {formatDistance(sunDistanceM(row.id, ui.jd))}
                         </span>
@@ -149,7 +186,7 @@ export function Hud() {
           </ScrollArea>
         </section>
 
-        <div className="flex min-w-0 flex-1 flex-col justify-between">
+        <div className="flex min-h-0 min-w-0 flex-1 flex-col justify-between overflow-hidden">
           <div className="pointer-events-auto flex items-start justify-between gap-2">
             <Button
               type="button"
@@ -158,18 +195,18 @@ export function Hud() {
               className="md:hidden"
               onClick={() => setListOpen((open) => !open)}
             >
-              {listOpen ? "Sluit lijst" : "Objecten"}
+              {listOpen ? m.closeList : m.objects}
             </Button>
             <p className="ml-auto max-w-xs rounded-lg border border-white/10 bg-black/45 px-2 py-1 text-right text-[11px] leading-snug text-[#efe6d6] backdrop-blur-md sm:text-xs">
-              Jij bent {you} van de zon
-              <span className="mt-0.5 block text-[#c9c0b2]">{REALM_LABEL[realm]}</span>
+              {m.youAre(you)}
+              <span className="mt-0.5 block text-[#c9c0b2]">{realmLabel(realm, lang)}</span>
             </p>
           </div>
 
           {selected ? (
-            <article className="pointer-events-auto mt-2 max-w-md self-end rounded-xl border border-white/10 bg-black/55 p-3 text-sm text-[#f3eadc] backdrop-blur-md">
+            <article className="pointer-events-auto mt-2 min-h-0 max-h-full max-w-md self-end overflow-y-auto rounded-xl border border-white/10 bg-black/55 p-3 text-sm text-[#f3eadc] backdrop-blur-md">
               <div className="flex flex-wrap items-center gap-2">
-                <h2 className="font-display text-xl">{selected.name}</h2>
+                <h2 className="font-display text-xl">{objectName(selected, lang)}</h2>
                 <Badge
                   variant="secondary"
                   className={
@@ -178,29 +215,29 @@ export function Hud() {
                       : "bg-[#f0d7a2]/20 text-[#f6efe2]"
                   }
                 >
-                  {selected.evidence === "model" ? "Model" : "Waargenomen"}
+                  {selected.evidence === "model" ? m.model : m.observed}
                 </Badge>
               </div>
               <p className="mt-1 text-xs uppercase tracking-wide text-[#c9c0b2]">
-                {KIND_LABEL[selected.kind] ?? selected.kind}
+                {kindLabel(selected.kind, lang)}
                 {selected.mag != null ? ` · ${formatMag(selected.mag)}` : ""}
               </p>
-              <p className="mt-2 text-sm leading-relaxed text-[#e7dece]">{selected.summary}</p>
+              <p className="mt-2 text-sm leading-relaxed text-[#e7dece]">{objectSummary(selected, lang)}</p>
               <dl className="mt-3 space-y-1 text-xs text-[#f0e6d6]">
                 <div className="flex justify-between gap-3">
-                  <dt className="text-[#c9c0b2]">Afstand tot de zon</dt>
+                  <dt className="text-[#c9c0b2]">{m.distanceSun}</dt>
                   <dd>{formatDistance(sunDistanceM(selected.id, ui.jd))}</dd>
                 </div>
                 <div className="flex justify-between gap-3">
-                  <dt className="text-[#c9c0b2]">Afstand tot jou</dt>
+                  <dt className="text-[#c9c0b2]">{m.distanceYou}</dt>
                   <dd>{selectedDistance}</dd>
                 </div>
                 <div className="flex justify-between gap-3">
-                  <dt className="text-[#c9c0b2]">Grootte</dt>
-                  <dd className="text-right">{formatSize(selected.radiusM, selected.sizeNote)}</dd>
+                  <dt className="text-[#c9c0b2]">{m.size}</dt>
+                  <dd className="text-right">{formatSize(selected.radiusM, objectSizeNote(selected, lang))}</dd>
                 </div>
                 <div className="flex justify-between gap-3">
-                  <dt className="text-[#c9c0b2]">Snelheid</dt>
+                  <dt className="text-[#c9c0b2]">{m.speed}</dt>
                   <dd className="text-right">{speedPhrase(selected.id, ui.jd)}</dd>
                 </div>
               </dl>
@@ -210,12 +247,12 @@ export function Hud() {
                 className="mt-3"
                 onClick={() => selectObject(selected.id)}
               >
-                Vlieg erheen
+                {m.flyTo}
               </Button>
             </article>
           ) : (
             <p className="pointer-events-none mt-auto max-w-sm self-end text-sm text-[#d9d0c2]">
-              Klik een wereld aan, of kies er een in de lijst.
+              {m.pickOne}
             </p>
           )}
         </div>
@@ -224,26 +261,52 @@ export function Hud() {
       <div className="pointer-events-none mt-2 flex">
         <div className="pointer-events-auto max-w-xs rounded-xl border border-white/10 bg-black/55 px-3 py-2 text-xs text-[#f3eadc] backdrop-blur-md">
           <p className="flex justify-between gap-4">
-            <span className="text-[#c9c0b2]">Afstand tot de zon</span>
+            <span className="text-[#c9c0b2]">{m.distanceSun}</span>
             <span>{you}</span>
           </p>
           <p className="mt-0.5 flex justify-between gap-4">
-            <span className="text-[#c9c0b2]">Jouw snelheid</span>
+            <span className="text-[#c9c0b2]">{m.yourSpeed}</span>
             <span>{formatSpeed(frame.speedMps)}</span>
           </p>
           {bar ? (
             <div className="mt-2">
               <div className="h-1 rounded-full bg-[#f0d7a2]" style={{ width: bar.px }} />
               <p className="mt-1 text-[11px] text-[#d9d0c2]">
-                Deze streep is {bar.label}, ware maat op de afstand tot de dichtstbijzijnde wereld.
+                {m.scaleBar(bar.label)}
               </p>
             </div>
           ) : null}
         </div>
       </div>
 
-      <footer className="pointer-events-auto mt-2 rounded-xl border border-white/10 bg-black/55 p-3 backdrop-blur-md">
-        <div className="flex flex-wrap items-center gap-2">
+      <footer className="pointer-events-auto mt-2 max-h-[42vh] overflow-y-auto rounded-xl border border-white/10 bg-black/55 p-3 backdrop-blur-md sm:max-h-none sm:overflow-visible">
+        <div className="grid grid-cols-3 gap-2">
+          <ModeButton
+            active={!ui.freeNav && !ui.topDown}
+            label={m.modeOrbit}
+            onClick={() => {
+              setFreeNav(false);
+              setTopDown(false);
+            }}
+          />
+          <ModeButton
+            active={ui.topDown}
+            disabled={!ui.topDown && !canTopDown(ui.selectedId)}
+            label={m.modeTop}
+            title={canTopDown(ui.selectedId) ? m.modeHintTop : m.modeTopDisabled}
+            onClick={() => setTopDown(true)}
+          />
+          <ModeButton
+            active={ui.freeNav}
+            label={m.modeFree}
+            title={m.modeHintFree}
+            onClick={() => setFreeNav(true)}
+          />
+        </div>
+        <p className="mt-2 hidden text-center text-xs text-[#f0e6d4] sm:block">
+          {ui.freeNav ? m.modeHintFree : ui.topDown ? m.modeHintTop : m.modeHintOrbit}
+        </p>
+        <div className="mt-3 flex flex-wrap items-center gap-2">
           <Button
             type="button"
             size="sm"
@@ -253,9 +316,9 @@ export function Hud() {
               emitUi();
             }}
           >
-            {ui.playing ? "Pauze" : "Afspelen"}
+            {ui.playing ? m.pause : m.play}
           </Button>
-          <span className="text-[11px] tracking-wide text-[#c9c0b2]">Klok</span>
+          <span className="text-[11px] tracking-wide text-[#c9c0b2]">{m.clock}</span>
           <span className="text-sm text-[#f6efe2]">{formatClock(ui.clockFactor)}</span>
           <Button
             type="button"
@@ -263,18 +326,18 @@ export function Hud() {
             variant={ui.clockFactor === 1 ? "default" : "secondary"}
             onClick={() => setClockFactor(1)}
           >
-            Naar 1×
+            {m.backTo1}
           </Button>
           {CLOCK_PRESETS.map((option) => (
             <Button
-              key={option.label}
+              key={option.factor}
               type="button"
               size="sm"
               variant={sameFactor(ui.clockFactor, option.factor) ? "default" : "ghost"}
               className="text-[#f3eadc]"
               onClick={() => setClockFactor(option.factor)}
             >
-              {option.label}
+              {formatClockPreset(option.factor)}
             </Button>
           ))}
           <Button
@@ -284,14 +347,12 @@ export function Hud() {
             className="text-[#f3eadc]"
             onClick={() => setSimTime(INITIAL_JD)}
           >
-            Vandaag
+            {m.today}
           </Button>
-          <p className="ml-auto font-display text-lg text-[#f6efe2] sm:text-2xl">
-            {formatDutchDate(ui.jd)}
-          </p>
+          <DateControl jd={ui.jd} />
         </div>
         <div className="mt-2 flex flex-wrap items-center gap-2">
-          <span className="text-[11px] tracking-wide text-[#c9c0b2]">Vlucht</span>
+          <span className="text-[11px] tracking-wide text-[#c9c0b2]">{m.flight}</span>
           <span className="text-sm text-[#f6efe2]">
             {formatFlight(frame.flightFactor, frame.boost)}
           </span>
@@ -301,24 +362,24 @@ export function Hud() {
             variant={frame.flightFactor === 1 && !frame.boost ? "default" : "secondary"}
             onClick={() => setFlightFactor(1)}
           >
-            Naar 1×
+            {m.backTo1}
           </Button>
           {FLIGHT_PRESETS.map((option) => (
             <Button
-              key={option.label}
+              key={option.factor}
               type="button"
               size="sm"
               variant={sameFactor(frame.flightFactor, option.factor) ? "default" : "ghost"}
               className="text-[#f3eadc]"
               onClick={() => setFlightFactor(option.factor)}
             >
-              {option.label}
+              {formatFactor(option.factor)}
             </Button>
           ))}
         </div>
         <div className="mt-3 px-1">
           <Label htmlFor="tijd" className="mb-1 block text-[11px] text-[#c9c0b2]">
-            Tijd, van 3000 v.Chr. tot 3000 n.Chr. Alleen de banen in het zonnestelsel schuiven mee.
+            {m.timeSlider}
           </Label>
           <Slider
             id="tijd"
@@ -333,33 +394,67 @@ export function Hud() {
             }}
           />
         </div>
-        <p className="mt-2 text-[11px] leading-relaxed text-[#d5ccbe]">
-          {frame.compressed
-            ? "Buiten de Kuipergordel is het beeld logaritmisch samengedrukt. De getallen op de labels zijn ware afstand, grootte en snelheid."
-            : "In het zonnestelsel kloppen de afstanden. Planeten en manen houden hun onderlinge snelheid, ook als de klok sneller staat. Mimas, Amalthea, Miranda en de kleine zwermen laat ik weg: naast hun planeet zijn ze zo goed als onzichtbaar. Phobos en Deimos staan er wel bij."}{" "}
-          1× op de klok is ware tijd. 1× vliegen is 1 km/s. Sterrenstelsels, het kosmisch web en de
-          achtergrondstraling blijven op nu.
+        <p className="mt-2 hidden text-[11px] leading-relaxed text-[#d5ccbe] sm:block">
+          {frame.compressed ? m.compressed : m.linear} {m.rates}
         </p>
         <p className="mt-1 hidden text-[11px] text-[#b7ae9f] sm:block">
-          Slepen: kijken. WASD: vliegen. Q/E: omhoog en omlaag. Shift: vlucht even ×10. Scrollwiel:
-          vliegsnelheid. Klik: ernaartoe. Spatie: klok.
+          {ui.freeNav ? m.hintFree : m.hintOrbit}
         </p>
         <div className="mt-2 grid grid-cols-3 gap-1 sm:hidden">
           <span />
-          <HoldButton label="Vooruit" code="forward" />
+          <HoldButton label={ui.freeNav ? m.forward : m.closer} code="forward" />
           <span />
-          <HoldButton label="Links" code="left" />
-          <HoldButton label="Omhoog" code="up" />
-          <HoldButton label="Rechts" code="right" />
-          <HoldButton label="Achteruit" code="back" />
-          <HoldButton label="Omlaag" code="down" />
-          <HoldButton label="Snel" code="boost" />
+          <HoldButton label={ui.freeNav ? m.left : m.turnLeft} code="left" />
+          <HoldButton label={ui.freeNav ? m.up : m.higher} code="up" />
+          <HoldButton label={ui.freeNav ? m.right : m.turnRight} code="right" />
+          <HoldButton label={ui.freeNav ? m.back : m.farther} code="back" />
+          <HoldButton label={ui.freeNav ? m.down : m.lower} code="down" />
+          <HoldButton label={m.boost} code="boost" />
         </div>
       </footer>
     </div>
   );
 }
 
+function chooseLang(next: Lang) {
+  setLang(next);
+  const url = new URL(window.location.href);
+  url.searchParams.set("lang", next);
+  window.history.replaceState(null, "", url);
+}
+
 function sameFactor(a: number, b: number) {
   return Math.abs(a - b) / b < 0.02;
+}
+
+function ModeButton({
+  active,
+  disabled,
+  label,
+  title,
+  onClick,
+}: {
+  active: boolean;
+  disabled?: boolean;
+  label: string;
+  title?: string;
+  onClick: () => void;
+}) {
+  return (
+    <Button
+      type="button"
+      aria-pressed={active}
+      disabled={disabled}
+      title={title}
+      onClick={onClick}
+      variant="ghost"
+      className={`h-11 text-sm font-medium ${
+        active
+          ? "bg-[#f0d7a2] text-[#1a140c] hover:bg-[#f0d7a2]/90"
+          : "border border-white/20 bg-white/10 text-[#f6efe2] hover:bg-white/20"
+      }`}
+    >
+      {label}
+    </Button>
+  );
 }

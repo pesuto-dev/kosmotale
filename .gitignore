@@ -17,6 +17,12 @@
 /.next/
 /out/
 
+# Local demo recordings from `npm run record-demo`
+/demo-output/
+
+# demotale recordings. The scenario in demo/ stays; the film does not.
+/demo/output/
+
 # production
 /build
 

@@ -1,10 +1,36 @@
 "use client";
 
-import { Canvas } from "@react-three/fiber";
-import { Component, useState } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Component, useEffect, useRef, useState } from "react";
 import { FlightRig } from "@/components/flight-rig";
 import { VIEW_FOV_DEG } from "@/lib/constants";
+import { copy } from "@/lib/messages";
 import { UniverseScene } from "@/components/universe-scene";
+
+declare global {
+  interface Window {
+    /** True nadat het WebGL-canvas een paar frames heeft getekend. Leest `scripts/record-demo.ts`. */
+    __kosmotaleReady?: boolean;
+  }
+}
+
+/** Eerste bruikbare frames: het canvas heeft een buffer en de camera staat op de aarde. */
+function MarkReady() {
+  const frames = useRef(0);
+  useEffect(() => {
+    return () => {
+      window.__kosmotaleReady = false;
+    };
+  }, []);
+  useFrame((state) => {
+    if (window.__kosmotaleReady) return;
+    const canvas = state.gl.domElement;
+    if (canvas.width < 2 || canvas.height < 2) return;
+    frames.current += 1;
+    if (frames.current >= 8) window.__kosmotaleReady = true;
+  });
+  return null;
+}
 
 function hasWebGL() {
   try {
@@ -29,7 +55,7 @@ class SceneBoundary extends Component<
     if (this.state.failed) {
       return (
         <div className="grid h-full place-items-center px-6 text-center text-sm text-[#f0e6d4]">
-          De scène liep vast. Herlaad de pagina.
+          {copy().sceneCrashed}
         </div>
       );
     }
@@ -42,7 +68,7 @@ export default function SpaceCanvas() {
   if (!ready) {
     return (
       <div className="grid h-full place-items-center px-6 text-center text-sm text-[#f0e6d4]">
-        WebGL doet het hier niet. Zonder WebGL kan de ruimte niet draaien.
+        {copy().noWebgl}
       </div>
     );
   }
@@ -67,6 +93,7 @@ export default function SpaceCanvas() {
       >
         <UniverseScene />
         <FlightRig />
+        <MarkReady />
       </Canvas>
     </SceneBoundary>
   );

@@ -6,6 +6,8 @@ import { AU_M, LINEAR_AU, LY_M } from "@/lib/constants";
 import { toVisualRadius, unwarpVisual, visualToMeters } from "@/lib/coords";
 import { publishFrame } from "@/lib/frame";
 import { formatDistance, formatSize } from "@/lib/format";
+import { copy } from "@/lib/messages";
+import { objectName, objectSizeNote } from "@/lib/present";
 import { realmForDistance, sunDistanceM, trueMeters, visualBodyRadius, visualOf } from "@/lib/positions";
 import { SATURN_RING_ID, SATURN_RINGS_KM } from "@/lib/rings";
 import { speedPhrase } from "@/lib/motion";
@@ -83,9 +85,9 @@ export function publishLabels(camera: THREE.PerspectiveCamera, width: number, he
     const x = (_proj.x * 0.5 + 0.5) * width;
     const y = (-_proj.y * 0.5 + 0.5) * height;
     if (x < -80 || y < -40 || x > width + 80 || y > height + 40) continue;
-    const dist =
-      obj.id === "zon" ? "centrum" : formatDistance(sunDistanceM(obj.id, jd));
-    const evidence = obj.evidence === "model" ? "Model" : "Waargenomen";
+    const m = copy();
+    const dist = obj.id === "zon" ? m.center : formatDistance(sunDistanceM(obj.id, jd));
+    const evidence = obj.evidence === "model" ? m.model : m.observed;
     let priority = 30;
     if (isSel) priority = 100;
     else if (isHover) priority = 90;
@@ -99,9 +101,9 @@ export function publishLabels(camera: THREE.PerspectiveCamera, width: number, he
       x,
       y,
       priority,
-      name: obj.name,
+      name: objectName(obj),
       evidence: obj.evidence,
-      detail: `${evidence} · ${dist} van de zon · ${formatSize(obj.radiusM, obj.sizeNote)} · ${speedPhrase(obj.id, jd)}`,
+      detail: m.labelDetail(evidence, dist, formatSize(obj.radiusM, objectSizeNote(obj)), speedPhrase(obj.id, jd)),
     });
   }
 
