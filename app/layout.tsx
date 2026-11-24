@@ -4,12 +4,12 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "kosmotale",
-  description: "Van de aarde tot de rand van het waarneembare heelal. De sterdata zijn niet-commercieel.",
+  description: "From Earth to the edge of the observable universe. The star data are non-commercial.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="nl" className="dark h-full antialiased">
+    <html lang="en" className="dark h-full antialiased">
       <body className="min-h-full bg-[#03040c] text-[#f3eadc]">{children}</body>
     </html>
   );

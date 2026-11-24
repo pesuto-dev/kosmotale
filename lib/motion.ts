@@ -1,7 +1,10 @@
 import { getObject, moonById, planetById } from "@/lib/catalog";
-import { SATURN_RING_ID } from "@/lib/rings";
 import { formatSpeed } from "@/lib/format";
+import { getLang } from "@/lib/lang";
+import { copy } from "@/lib/messages";
+import { objectName } from "@/lib/present";
 import { trueMeters } from "@/lib/positions";
+import { SATURN_RING_ID } from "@/lib/rings";
 import type { Vec } from "@/lib/types";
 
 const STEP_DAYS = 10 / 86400;
@@ -34,17 +37,19 @@ export function orbitalSpeedMps(id: string, jd: number) {
 }
 
 export function speedPhrase(id: string, jd: number) {
-  if (id === SATURN_RING_ID) return "mee met Saturnus, geen eigen baan";
-  if (id === "zon") return "0 km/s, het middelpunt";
+  const m = copy();
+  if (id === SATURN_RING_ID) return m.speedRings;
+  if (id === "zon") return m.speedSun;
   const mps = orbitalSpeedMps(id, jd);
-  if (mps == null) return "beweegt niet met de klok";
+  if (mps == null) return m.speedStill;
   const moon = moonById.get(id);
   if (moon) {
-    const name = getObject(moon.parent)?.name ?? moon.parent;
-    const om = moon.parent === "aarde" ? "om de aarde" : `om ${name}`;
-    return `${formatSpeed(mps)} ${om}`;
+    const parent = getObject(moon.parent);
+    const name = parent ? objectName(parent) : moon.parent;
+    if (moon.parent === "aarde" && getLang() === "nl") return `${formatSpeed(mps)} om de aarde`;
+    return m.speedAround(formatSpeed(mps), name);
   }
-  return `${formatSpeed(mps)} om de zon`;
+  return m.speedAroundSun(formatSpeed(mps));
 }
 
 export function relativeAngleDeg(id: string, jd: number, days: number) {

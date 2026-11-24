@@ -4,12 +4,11 @@ A small web app for flying through the universe: from Earth to the edge of what 
 
 ## License
 
-- **Code:** [Apache License 2.0](LICENSE).
+- **Code:** [Apache License 2.0](LICENSE). That is the open-source license for the program.
 - **Star data** (`data/stars.json`): a derivative of the [Hipparcos](https://www.cosmos.esa.int/web/hipparcos) catalogue. This file is [Creative Commons Attribution-NonCommercial 3.0 IGO](LICENSES/hipparcos.txt), including for anyone who receives a copy. Do not use it commercially, do not imply ESA endorsement, and do not relabel it as Apache. See `LICENSES/hipparcos.txt` and `NOTICE`.
+- **Sky image** (`public/textures/sterren.jpg`): a 4096×2048 sRGB JPEG of [NASA SVS 4851, Deep Star Maps 2020](https://svs.gsfc.nasa.gov/4851) (`starmap_2020_4k.exr`), without constellation figures. The pixels include Hipparcos-2, Tycho-2 and Gaia DR2. Those Hipparcos and Tycho stars cannot be separated, so this file is [CC BY-NC 3.0 IGO](LICENSES/sterrenkaart.txt), not NASA public domain and not Apache. Credit NASA/Goddard SVS and ESA/Gaia/DPAC. A free copy, including on your own website, is allowed. Do not earn money from the image. See `LICENSES/sterrenkaart.txt` and `NOTICE`.
 
-The distribution as a whole is therefore not Apache-2.0, and is not fully open source.
-
-The background sky is a stylistic pattern of our own. It is not an astronomically accurate star map.
+The code can be reused under Apache-2.0. The catalogue and the sky image cannot. The distribution as a whole is therefore not Apache-2.0, and is not fully open source.
 
 ## Run locally
 
@@ -31,11 +30,17 @@ There is no live deploy in this repository.
 
 The export has no subpath by default. `NEXT_PUBLIC_BASE_PATH` is empty until the host has a real subpath; that value becomes `basePath` and the prefix for textures and license links. The files themselves stay at the root of `out/`, next to `index.html`.
 
+## Language
+
+The interface is English by default. NL in the header switches to Dutch. `?lang=en` or `?lang=nl` sets it for that visit and remembers the choice.
+
 ## Controls
 
-- By default the camera stays on the selected world: drag to orbit it, scroll to zoom, WASD to turn and dolly, Q and E to tilt
-- Bovenaanzicht looks down on that orbit (planets, moons and Pluto). Drag still orbits, scroll still zooms
-- Los navigeren switches to free flight: drag to look, WASD to fly, Q and E to go up and down. The scroll wheel then changes flight speed. Shift holds ×10 for a moment
+- Orbit keeps the camera on the selected world: drag to orbit it, scroll to zoom, WASD to turn and dolly, Q and E to tilt
+- Top view (Bovenaanzicht) looks down on that orbit (planets, moons and Pluto). Drag still orbits, scroll still zooms
+- Free flight (Los navigeren): drag to look, WASD to fly, Q and E to go up and down. The scroll wheel then changes flight speed. Shift holds ×10 for a moment
+- The three camera modes sit at the top of the control bar
+- Date opens a picker: year, month and day, plus Today, J2000, the Apollo 11 landing and Voyager 2 at Neptune. The year slider underneath still scrubs from 3000 BCE to 3000 CE
 - Flight and clock have two separate speed controls, each with a button back to 1×
 - 1× flight is 1 km/s. Higher is a multiple
 - 1× on the clock is real time
@@ -44,7 +49,15 @@ The export has no subpath by default. `NEXT_PUBLIC_BASE_PATH` is empty until the
 
 ## Recording the demo
 
-Record this on a laptop with a real GPU. A headless VM draws the Earth and then goes grey, so the script opens headed Chromium and does not pass SwiftShader flags.
+The film on pesuto.dev is the demotale scenario in `demo/kosmotale.demo.ts`: Earth, top view, the year 2000, then the flight to Sirius. Run `npx demotale agent-guide` before changing it. With the dev server already on port 43127:
+
+```bash
+npx demotale record --headed
+```
+
+The take lands in `demo/output/` and is not committed. Headless Chromium draws the Earth and then goes grey, so the recording stays headed.
+
+The older camera script below is a short silent take, not the site film. Record it on a laptop with a real GPU. It opens headed Chromium and does not pass SwiftShader flags.
 
 Prerequisites: Node.js 20 or newer, Chromium for Playwright (`npx playwright install chromium`, once), and ffmpeg on `PATH` (`winget install Gyan.FFmpeg`, `brew install ffmpeg`, or `sudo apt install ffmpeg`).
 
@@ -56,7 +69,7 @@ With no `--url`, the script starts `next dev` on port 43127, or reuses that port
 
 - `--url http://127.0.0.1:43127` — record a server that is already running
 - `--duration 15` — length of the camera path in seconds (default 15, allowed 8–60)
-- `--lang nl` — the UI strings are Dutch only. Another value is reported and the recording stays Dutch
+- `--lang en` or `--lang nl` — interface language. English is the default
 - `--prod` — record the production export instead of the dev server
 
 The page cursor is hidden (`cursor: none`). The video is 1280×800; the headed window renders at `deviceScaleFactor` 2. Playwright does not capture the OS cursor.
@@ -70,6 +83,7 @@ The path is fixed. It holds on Earth, drags to orbit, scrolls to zoom out toward
 - Planet orbits: E.M. Standish, Keplerian elements, JPL. Diameters: NASA Planetary Fact Sheet.
 - Pluto and moons: osculating elements from JPL Horizons at J2000. An approximation, not a full ephemeris.
 - Star positions: ESA (1997), *The Hipparcos and Tycho Catalogues*, I/239. Credit: ESA. CC BY-NC 3.0 IGO. See `LICENSES/hipparcos.txt`.
+- Background sky: NASA SVS 4851, Deep Star Maps 2020, Hipparcos-2, Tycho-2 and Gaia DR2, no constellation figures. Same CC BY-NC 3.0 IGO, because the Hipparcos and Tycho stars stay in the pixels. Credit: NASA/Goddard Space Flight Center Scientific Visualization Studio. Gaia DR2: ESA/Gaia/DPAC. See `LICENSES/sterrenkaart.txt`. `python3 scripts/build-textures.py sterren` rebuilds the JPEG (Pillow, numpy, OpenEXR).
 - Star names: IAU Catalog of Star Names (WGSN). No CC version number claimed.
 - Mercury: USGS, MESSENGER MDIS Global Color Mosaic 665 m, edition 3, public domain, cite the authors. The TIFF is not committed. `python3 scripts/build-textures.py mercurius` fetches and scales it.
 - Uranus: NASA VTAD, texture from the 3D model.

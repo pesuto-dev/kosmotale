@@ -3,7 +3,8 @@
 
 Nodig: Python 3 met pillow en numpy. De JPEG's staan al in de repo; dit script
 maakt ze opnieuw. Bronnen en licenties staan in de README en in NOTICE.
-De hemel is procedureel en komt hier niet vandaan. Geen sterrenkaart downloaden.
+De sterrenhemel (sterren) vraagt ook OpenEXR en haalt SVS 4851 op. Licentie:
+LICENSES/sterrenkaart.txt. Die aanroep is apart: python3 scripts/build-textures.py sterren.
 """
 
 import io
@@ -71,6 +72,8 @@ SOURCES = {
 }
 
 SUN_URL = "https://svs.gsfc.nasa.gov/vis/a000000/a003800/a003851/solarSphere304A.0200.jpg"
+# Deep Star Maps 2020, zonder sterrenbeeldfiguren. Zie LICENSES/sterrenkaart.txt.
+STARS_URL = "https://svs.gsfc.nasa.gov/vis/a000000/a004800/a004851/starmap_2020_4k.exr"
 
 
 def fetch(url: str) -> bytes:
@@ -120,6 +123,25 @@ def fill_gaps(img: Image.Image) -> Image.Image:
     return Image.fromarray(a, "L")
 
 
+def build_stars():
+    import Imath
+    import OpenEXR
+
+    path = CACHE / "starmap_2020_4k.exr"
+    if not path.exists():
+        path.write_bytes(fetch(STARS_URL))
+    exr = OpenEXR.InputFile(str(path))
+    win = exr.header()["dataWindow"]
+    w, h = win.max.x - win.min.x + 1, win.max.y - win.min.y + 1
+    pt = Imath.PixelType(Imath.PixelType.FLOAT)
+    rgb = np.stack(
+        [np.frombuffer(exr.channel(c, pt), dtype=np.float32).reshape(h, w) for c in "RGB"], -1
+    )
+    lin = np.clip(rgb, 0, 1)
+    srgb = np.where(lin <= 0.0031308, lin * 12.92, 1.055 * np.power(lin, 1 / 2.4) - 0.055)
+    save(Image.fromarray((srgb * 255 + 0.5).astype(np.uint8), "RGB"), "sterren", 4096, quality=88)
+
+
 def build_sun():
     img = Image.open(io.BytesIO(fetch(SUN_URL))).convert("L")
     a = np.asarray(img, dtype=np.float32)
@@ -147,6 +169,8 @@ def main():
         save(img, name, width)
     if not only or "zon" in only:
         build_sun()
+    if "sterren" in only:
+        build_stars()
 
 
 if __name__ == "__main__":

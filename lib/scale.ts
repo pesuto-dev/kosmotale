@@ -1,8 +1,13 @@
 import { AU_M, EARTH_RADIUS_KM, VIEW_FOV_DEG } from "@/lib/constants";
+import { getLang } from "@/lib/lang";
+import { copy } from "@/lib/messages";
 
 const EARTH_DIAMETER_M = EARTH_RADIUS_KM * 2 * 1000;
 
-const nf = new Intl.NumberFormat("nl-NL", { maximumFractionDigits: 2 });
+function formatNum(n: number) {
+  const locale = getLang() === "nl" ? "nl-NL" : "en-US";
+  return new Intl.NumberFormat(locale, { maximumFractionDigits: 2 }).format(n);
+}
 
 function nice(x: number) {
   if (!Number.isFinite(x) || x <= 0) return 1;
@@ -23,19 +28,20 @@ export function scaleBar(depthM: number, viewW: number, viewH: number): ScaleBar
   const mPerPx = widthM / viewW;
   const targetPx = Math.min(220, Math.max(88, viewW * 0.16));
   const raw = mPerPx * targetPx;
+  const m = copy();
   const au = raw / AU_M;
   if (au >= 0.02) {
     const n = nice(au);
     const digits = n >= 10 ? 0 : n >= 1 ? 1 : 2;
     return {
       px: clamp(targetPx * (n / au)),
-      label: `${nf.format(Number(n.toFixed(digits)))} AE`,
+      label: `${formatNum(Number(n.toFixed(digits)))} ${m.unitAu}`,
     };
   }
   const earths = Math.max(raw / EARTH_DIAMETER_M, 0.01);
   const n = earths >= 0.8 ? Math.max(1, nice(earths)) : nice(earths);
-  const word = Math.abs(n - 1) < 0.01 ? "aarddiameter" : "aarddiameters";
-  return { px: clamp(targetPx * (n / earths)), label: `${nf.format(n)} ${word}` };
+  const word = Math.abs(n - 1) < 0.01 ? m.earthDiameter : m.earthDiameters;
+  return { px: clamp(targetPx * (n / earths)), label: `${formatNum(n)} ${word}` };
 }
 
 function clamp(px: number) {

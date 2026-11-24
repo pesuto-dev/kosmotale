@@ -13,7 +13,7 @@ function noRaycast() {
   return;
 }
 
-/** 0 bij de zon, 1 zodra de lokale stijlhemel moet wijken voor het 3D-model. */
+/** 0 bij de zon, 1 zodra de SVS-hemel moet wijken voor het 3D-model. */
 export const skyFade = { value: 0 };
 /** In bovenaanzicht dooft de sterrenhemel tot dit deel, zodat de baan het beeld draagt. */
 const TOP_DOWN_STARS = 0.2;
@@ -23,8 +23,8 @@ export const starDim = { value: 1 };
 const SKY_BRIGHT = 1.15;
 
 /**
- * Stijlhemel, geen sterrenkaart. Dooft uit tussen 60 en 4000 lichtjaar,
- * waar het 3D-model van de Melkweg het overneemt.
+ * SVS 4851 als hemel vanaf de aarde. Dooft uit tussen 60 en 4000 lichtjaar,
+ * waar die kaart ophoudt te kloppen en het 3D-model van de Melkweg het overneemt.
  */
 export function Sky() {
   const mat = useMemo(() => skyMaterial(), []);

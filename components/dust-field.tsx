@@ -12,7 +12,7 @@ function noRaycast() {
   return;
 }
 
-/** Het 3D-model van de Melkweg komt op zodra de stijlhemel dooft. */
+/** Het 3D-model van de Melkweg komt op zodra de SVS-hemel dooft. */
 export function Dust() {
   const { positions, colors } = useMemo(() => buildMilkyWay(), []);
   const geom = useMemo(() => {

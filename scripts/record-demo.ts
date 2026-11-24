@@ -77,7 +77,7 @@ function nextBin() {
 }
 
 function parseArgs(argv: string[]): Options {
-  const opts: Options = { url: null, duration: 15, lang: "nl", prod: false };
+  const opts: Options = { url: null, duration: 15, lang: "en", prod: false };
   for (let i = 0; i < argv.length; i += 1) {
     const arg = argv[i] ?? "";
     const take = (flag: string) => {
@@ -89,11 +89,11 @@ function parseArgs(argv: string[]): Options {
       return value;
     };
     if (arg === "--help" || arg === "-h") {
-      console.log(`npm run record-demo -- [--url URL] [--duration SEC] [--lang nl] [--prod]
+      console.log(`npm run record-demo -- [--url URL] [--duration SEC] [--lang en|nl] [--prod]
 
   --url        al draaiende server, bijvoorbeeld http://127.0.0.1:${DEV_PORT}
   --duration   lengte van het camerapad in seconden (8–60, standaard 15)
-  --lang       alleen nl doet iets; de interface is Nederlands
+  --lang       en (standaard) of nl
   --prod       next build, daarna de statische export in out/ serveren
 `);
       process.exit(0);
@@ -108,6 +108,10 @@ function parseArgs(argv: string[]): Options {
     } else {
       throw new Error(`Onbekende optie: ${arg}`);
     }
+  }
+  opts.lang = opts.lang.toLowerCase();
+  if (opts.lang !== "en" && opts.lang !== "nl") {
+    throw new Error("--lang is en of nl.");
   }
   if (!Number.isFinite(opts.duration) || opts.duration < 8 || opts.duration > 60) {
     throw new Error("--duration moet een getal van 8 tot en met 60 seconden zijn.");
@@ -528,7 +532,7 @@ async function record(url: string, opts: Options) {
   const context = await browser.newContext({
     viewport: { width: VIEW_W, height: VIEW_H },
     deviceScaleFactor: 2,
-    locale: opts.lang.toLowerCase().startsWith("nl") ? "nl-NL" : opts.lang,
+    locale: opts.lang === "nl" ? "nl-NL" : "en-US",
     colorScheme: "dark",
     recordVideo: { dir: rawDir, size: { width: VIEW_W, height: VIEW_H } },
   });
@@ -536,7 +540,9 @@ async function record(url: string, opts: Options) {
   const page = await context.newPage();
   try {
     const mark = Date.now();
-    await page.goto(url, { waitUntil: "domcontentloaded", timeout: 120_000 });
+    const pageUrl = new URL(url);
+    pageUrl.searchParams.set("lang", opts.lang);
+    await page.goto(pageUrl.toString(), { waitUntil: "domcontentloaded", timeout: 120_000 });
     await page.waitForFunction(
       () => {
         const canvas = document.querySelector("canvas");
@@ -572,9 +578,6 @@ async function record(url: string, opts: Options) {
 
 async function main() {
   const opts = parseArgs(process.argv.slice(2));
-  if (!opts.lang.toLowerCase().startsWith("nl")) {
-    console.log(`--lang ${opts.lang} doet niets: de interface is alleen Nederlands. De opname blijft Nederlands.`);
-  }
   const server = await ensureServer(opts);
   try {
     await record(server.url, opts);

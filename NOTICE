@@ -1,8 +1,10 @@
 kosmotale
 =========
 
-De programmacode valt onder de Apache-licentie 2.0 (LICENSE).
-data/stars.json valt daar niet onder. Zie LICENSES/hipparcos.txt.
+De programmacode valt onder de Apache-licentie 2.0 (LICENSE). Dat is de
+open-sourcelicentie van het programma.
+data/stars.json en public/textures/sterren.jpg vallen daar niet onder.
+Zie LICENSES/hipparcos.txt en LICENSES/sterrenkaart.txt.
 De distributie als geheel is niet Apache-2.0 en niet volledig open source.
 
 Sterren
@@ -18,8 +20,16 @@ Namen
     Geen CC BY 4.0 geclaimd. Geen etymologieteksten.
 
 Hemel
-    Eigen procedurele stijl. Geen sterrenkaart en geen NASA SVS 4851-bestand
-    in deze boom.
+    public/textures/sterren.jpg. NASA SVS 4851, Deep Star Maps 2020,
+    starmap_2020_4k.exr, zonder sterrenbeeldfiguren.
+    https://svs.gsfc.nasa.gov/4851
+    Hipparcos-2, Tycho-2 en Gaia DR2 zitten in het beeld. Daarom
+    CC BY-NC 3.0 IGO, niet NASA-publiek-domein en niet Apache.
+    Credit: NASA/Goddard Space Flight Center Scientific Visualization Studio.
+    Gaia DR2: ESA/Gaia/DPAC. Credit: ESA voor Hipparcos en Tycho.
+    Geen endorsement.
+    Bewerking: lineaire EXR naar sRGB-JPEG, 4096×2048, kwaliteit 88.
+    Zie LICENSES/sterrenkaart.txt.
 
 Mercurius
     USGS Astrogeology, MESSENGER MDIS Global Color Mosaic 665 m, edition 3.

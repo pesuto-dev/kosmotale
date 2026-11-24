@@ -4,6 +4,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Component, useEffect, useRef, useState } from "react";
 import { FlightRig } from "@/components/flight-rig";
 import { VIEW_FOV_DEG } from "@/lib/constants";
+import { copy } from "@/lib/messages";
 import { UniverseScene } from "@/components/universe-scene";
 
 declare global {
@@ -54,7 +55,7 @@ class SceneBoundary extends Component<
     if (this.state.failed) {
       return (
         <div className="grid h-full place-items-center px-6 text-center text-sm text-[#f0e6d4]">
-          De scène liep vast. Herlaad de pagina.
+          {copy().sceneCrashed}
         </div>
       );
     }
@@ -67,7 +68,7 @@ export default function SpaceCanvas() {
   if (!ready) {
     return (
       <div className="grid h-full place-items-center px-6 text-center text-sm text-[#f0e6d4]">
-        WebGL doet het hier niet. Zonder WebGL kan de ruimte niet draaien.
+        {copy().noWebgl}
       </div>
     );
   }

@@ -1,22 +1,31 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useEffect } from "react";
+import { useEffect, useSyncExternalStore } from "react";
 import { Hud } from "@/components/hud";
 import { SkyLabels } from "@/components/sky-labels";
 import { MAX_YEAR, MIN_YEAR, yearFloatToJd } from "@/lib/constants";
+import { bootLang, getLang, subscribeLang } from "@/lib/lang";
+import { copy } from "@/lib/messages";
 import { clockDaysPerSecond, emitUi, sim } from "@/lib/sim";
+
+function LoadingSpace() {
+  const lang = useSyncExternalStore(subscribeLang, getLang, () => "en" as const);
+  return (
+    <div className="grid h-full place-items-center text-sm text-[#f0e6d4]">{copy(lang).loading}</div>
+  );
+}
 
 const SpaceCanvas = dynamic(() => import("@/components/space-canvas"), {
   ssr: false,
-  loading: () => (
-    <div className="grid h-full place-items-center text-sm text-[#f0e6d4]">
-      De ruimte wordt opgebouwd…
-    </div>
-  ),
+  loading: () => <LoadingSpace />,
 });
 
 export function SpaceApp() {
+  useSyncExternalStore(subscribeLang, getLang, () => "en" as const);
+  useEffect(() => {
+    bootLang();
+  }, []);
   useEffect(() => {
     const min = yearFloatToJd(MIN_YEAR);
     const max = yearFloatToJd(MAX_YEAR);
@@ -43,7 +52,7 @@ export function SpaceApp() {
 
   return (
     <main className="relative h-dvh w-full overflow-hidden bg-[#03040c] text-[#f3eadc]">
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-0">
         <SpaceCanvas />
       </div>
       <SkyLabels />

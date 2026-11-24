@@ -1,0 +1,57 @@
+Sterrenhemel in public/textures/sterren.jpg
+==========================================
+
+Dit bestand is geen Apache-2.0-werk. Het valt niet onder LICENSE in de
+repositorywortel. Ontvangers krijgen dezelfde beperkingen als de verspreider.
+De programmacode van kosmotale blijft Apache-2.0. Dit beeld niet. Het is geen
+open-sourcelicentie.
+
+Bron
+    NASA SVS, Deep Star Maps 2020, SVS 4851.
+    https://svs.gsfc.nasa.gov/4851
+    Bestand starmap_2020_4k.exr, plate carrée, equatoriale coördinaten,
+    RA 0h in het midden, RA oplopend naar links.
+    Geen sterrenbeeldfiguren en geen coördinatennet. Die lagen van SVS 4851
+    zitten er niet in. De figuren zijn gebaseerd op werk van Alan MacRobert
+    (Sky & Telescope) voor de IAU en blijven buiten deze boom.
+
+Wat erin geplot is
+    Hipparcos-2, Tycho-2 en Gaia DR2, met aanvullingen uit de Yale Bright Star
+    Catalog en UCAC3 waar SVS gaten vulde. De heldere sterren zijn niet uit
+    de pixels te halen.
+
+Licentie
+    Creative Commons Attribution-NonCommercial 3.0 IGO
+    https://creativecommons.org/licenses/by-nc/3.0/igo/legalcode
+
+    NASA noemt SVS-beelden publiek domein, tenzij anders vermeld. Dat dekt het
+    aandeel van NASA niet voorbij de catalogi van ESA. Hipparcos-2 en Tycho-2
+    horen bij dezelfde ESA-catalogusfamilie als data/stars.json. Die familie
+    verspreidt deze repo onder CC BY-NC 3.0 IGO. Omdat die sterren in hetzelfde
+    beeld zitten, gaat dit JPEG mee onder die akte. Het is geen
+    NASA-publiek-domein en geen Apache-2.0.
+
+    Gaia DR2 zelf draagt deze tekst niet als NC-akte. Het beeld als geheel wel,
+    omdat de Hipparcos- en Tycho-sterren er niet uit te lichten zijn.
+
+Credit
+    NASA/Goddard Space Flight Center Scientific Visualization Studio.
+    Gaia DR2: ESA/Gaia/DPAC.
+    Hipparcos en Tycho: Credit: ESA. The Hipparcos and Tycho Catalogues
+    (ESA 1997), met de latere reducties Hipparcos-2 en Tycho-2 die SVS gebruikte.
+    Geen endorsement door NASA of ESA.
+
+Bewerking van ons
+    Lineaire OpenEXR naar sRGB-JPEG, 4096×2048, kwaliteit 88.
+    python3 scripts/build-textures.py sterren maakt het bestand opnieuw
+    (Pillow, numpy en OpenEXR).
+
+Voorwaarden voor iedereen die dit bestand ontvangt
+    - Alleen verspreiden onder deze licentie, met deze tekst of de URI hierboven.
+    - Een gratis kopie mag, ook op een eigen website, zolang dat niet primair
+      voor commercieel voordeel of privé geld is.
+    - Geld verdienen met dit beeld, ook indirect, mag niet zonder voorafgaande
+      toestemming van ESA (data.licences@esa.int), naast de NC-akte.
+    - Geen extra voorwaarden die de rechten onder deze licentie inkorten, en geen
+      Apache-2.0-label op dit bestand.
+    - Geen endorsement door ESA of NASA suggereren.

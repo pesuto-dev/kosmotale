@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { loadTexture } from "@/components/scene-materials";
 
 const SKY_VERT = /* glsl */ `
 varying vec3 vDir;
@@ -9,43 +10,54 @@ void main() {
 `;
 
 /**
- * Eigen stijlhemel. Geen catalogus, geen foto en geen projectie van een sterrenkaart.
- * De stippen hangen aan een vast raster op de kijkrichting en zijn dus niet de 401 sterren.
+ * NASA SVS Deep Star Maps 2020 (SVS 4851), zonder sterrenbeeldfiguren.
+ * RA 0h in het midden, RA loopt naar links.
+ * Licentie: LICENSES/sterrenkaart.txt. Geen Apache en geen NASA-publiek-domeinlabel.
  */
 const SKY_FRAG = /* glsl */ `
+uniform sampler2D uStars;
 uniform float uBright;
 varying vec3 vDir;
-
-float hash(vec3 p) {
-  return fract(sin(dot(p, vec3(127.1, 311.7, 74.7))) * 43758.5453);
-}
-
 void main() {
   vec3 d = normalize(vDir);
-  vec2 ang = vec2(atan(d.y, d.x), asin(clamp(d.z, -1.0, 1.0)));
-  vec2 scaled = ang * vec2(96.0, 48.0);
-  vec2 cell = floor(scaled);
-  vec2 f = fract(scaled);
-  float h = hash(vec3(cell, 1.0));
-  // Alleen het midden van de cel. De hele cel vullen maakt van elke stip een blok.
-  float blob = smoothstep(0.42, 0.05, length(f - 0.5));
-  float star = step(0.972, h) * blob;
-  float tint = hash(vec3(cell, 2.0));
-  vec3 col = vec3(0.012, 0.016, 0.034);
-  col += star * mix(vec3(0.62, 0.7, 0.9), vec3(1.0, 0.84, 0.68), tint) * (0.35 + 0.65 * hash(vec3(cell, 3.0)));
-  gl_FragColor = vec4(col * uBright, 1.0);
+  float ra = atan(d.y, d.x);
+  float u = fract(0.5 - ra / (2.0 * PI));
+  float v = 0.5 + asin(clamp(d.z, -1.0, 1.0)) / PI;
+  vec3 col = texture2D(uStars, vec2(u, v)).rgb * uBright;
+  gl_FragColor = vec4(col, 1.0);
   #include <colorspace_fragment>
 }
 `;
 
+function darkSky() {
+  const tex = new THREE.DataTexture(new Uint8Array([3, 4, 9, 255]), 1, 1);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  tex.needsUpdate = true;
+  return tex;
+}
+
 export function skyMaterial() {
-  return new THREE.ShaderMaterial({
-    uniforms: { uBright: { value: 0 } },
+  const uniforms: Record<string, THREE.IUniform> = {
+    uStars: { value: darkSky() },
+    uBright: { value: 0 },
+  };
+  const mat = new THREE.ShaderMaterial({
+    uniforms,
     vertexShader: SKY_VERT,
-    fragmentShader: SKY_FRAG,
+    fragmentShader: `#define PI 3.141592653589793\n${SKY_FRAG}`,
     depthTest: false,
     depthWrite: false,
     side: THREE.BackSide,
     toneMapped: false,
   });
+  loadTexture(
+    "sterren",
+    (t) => {
+      t.wrapS = THREE.RepeatWrapping;
+      t.wrapT = THREE.ClampToEdgeWrapping;
+      uniforms.uStars.value = t;
+    },
+    { mipmaps: false },
+  );
+  return mat;
 }
